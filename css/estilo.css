@@ -1,0 +1,335 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+/* HEADER */
+
+header{
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+header #headerleft{
+	width: 40%;
+}
+
+header #headercenter{
+	width: 45%;
+}
+
+header #headerright{
+	width: 15%;
+}
+
+header img#logotipo{
+	display: inline-block;	
+	padding: 1em;
+	width: 350px;
+	height: auto;
+}
+
+header input#buscador{
+	width: 50%;
+	padding: 10px 10px 10px 40px;
+	border: 1px solid #ADADAD;
+	border-radius: 5px;
+	background: url(../img/lupa.png) 5px 5px no-repeat;
+	transition: .3s;
+}
+
+header input#buscador:focus{
+	width: 65%;	
+	border: 1px solid  #95d913;	
+}
+
+
+.button {
+	background:#7f8c8d;
+	color:#fff;
+	display:inline-block;
+	font-size:1em;
+	padding:10px;
+	text-align:center;
+	font-weight: 300;
+	text-decoration:none;
+	box-shadow:0px 3px 0px #373c3c;
+}
+
+.button span {
+	margin-right:10px;
+}
+
+/*Colores*/
+.button.rosa {
+	background: #FF285D;
+	box-shadow:0px 3px 0px #A12744;
+}
+
+.button.rosa:hover {
+	background: #FF505F;
+}
+
+.button:active{
+	margin-top: 3px;
+}
+
+.button.rosa:active{
+	box-shadow:0px 1px 0px #A12744;
+}
+
+
+
+header img#avatar{
+	border-radius: 100%;
+	height: 80px;
+	width: auto;
+}
+
+
+#formularioLogin{
+	background-color: #FF2976;
+	display: none;
+	width: 100%;
+}
+
+
+
+/* NAV */
+
+nav{
+	width: 100%;
+	background-color:#2B2B2B;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-items: -webkit-stretch;
+}
+
+nav h3{	
+	padding: 1em;
+}
+
+#navleft{
+	width: 20%;
+	background-color:#1C1C1C;
+	text-align: center;
+	color: #A3A3A3;
+}
+
+#navcenter{
+	width: 60%;
+	text-align: left;
+	text-indent: 2em;
+	color: #FFFFFF;
+}
+
+#navright{
+	width: 20%;
+}
+
+
+
+
+/* MAIN */
+
+main{
+	overflow: hidden;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-items: -webkit-stretch;
+}
+
+
+
+
+/* ASIDE */
+
+aside{
+	width: 20%;	
+	background-color: #95d913;
+}
+
+aside ul li{
+	list-style: none;
+}
+
+aside ul li a{
+	display: block;
+	text-align: left;
+	color: #fff;
+	text-decoration: none;
+	padding: 1em;
+}
+
+aside ul li a i{
+	padding-right: 1em;
+}
+aside ul li a:hover{
+	background-color: #7AB014;
+}
+
+
+
+
+/* SECTION CARRERAS*/ 
+
+section{
+	width: 80%;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: stretch;
+	align-items: -webkit-stretch;	
+}
+
+section article{
+	/* Esto lo meto con FLEX */
+	padding: 1em;
+}
+
+section article.cartel h4{	
+	color:#1C1C1C;
+}
+
+section article.cartel p{	
+	color:#2B2B2B;
+}
+
+
+
+/* NUEVO USUARIO */
+
+article#nuevoUsuario h1{
+	font-weight: 300;
+	font-size: 4em;
+}
+
+
+article#nuevoUsuario form{
+
+}
+
+
+article#nuevoUsuario form input,textarea{
+	display: block;
+	width: 60%;
+	margin: 1em;
+	padding: 7px;
+	border: 1px solid #ADADAD;
+	border-radius: 5px; 
+	transition: .3s;
+}
+
+article#nuevoUsuario form input:focus{
+	width: 75%;	
+	border: 1px solid  #95d913;	
+}
+
+article#nuevoUsuario form input[type="submit"]:hover{
+	background: #95d913;
+	cursor: pointer;
+}
+
+
+/* CONTACTO */
+
+article#contacto h1{
+	font-weight: 300;
+	font-size: 4em;
+}
+
+
+
+/* AYUDA */
+
+article#ayuda h1{
+	font-weight: 300;
+	font-size: 4em;
+}
+
+article#ayuda h2{
+	font-weight: 300;
+	font-size: 2em;
+}
+
+/* Acordeon para la ayuda */
+
+.menujq{
+	margin-bottom: 2em;
+}
+.menujq ul {
+	list-style: none;
+	width: 100%;
+}
+.menujq h3 {
+	padding: 0.3em;
+	font-weight: 300;
+	background-color: #95d913;
+	border-bottom: 2px solid #88D124;
+	color: #fff;
+}
+.menujq h3:hover{
+	cursor: pointer;
+}
+
+
+/* Símbolo elemento normal */
+.menujq ul li h3:before {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 1em;
+}
+
+/* Eliminar símbolos para sub-opciones */
+.menujq ul li.desplegable ul li h3:before,
+.menujq ul li.desplegable.activa ul li h3:before {
+	content: "";
+}
+/* Lista anidada inicialmente oculta */
+.menujq ul ul {
+	display: none;
+	width: 100%;
+}
+/* Sangrado y segundo color para sub-opciones */
+.menujq ul ul li {
+	padding: 20px;
+	background: #DFF5BD;
+	text-transform: capitalize;
+}
+
+
+
+/* FOOTER */
+
+footer {
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	background-color:#1C1C1C;
+}
+
+footer img{
+	margin: 0 auto;
+	padding: 2em;
+	display: block;
+}
