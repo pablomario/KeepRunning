@@ -5,14 +5,13 @@
 	<div id="headerright">
 		<a href="#" id="buttonLogin" class="button rosa large">Iniciar Sesion</a>
 		<?php  ?>
-		<!-- <form>
-			<input type="text" name="nombre">
-			<input type="password" name="password">
-			<input type="submit" value="Iniciar Sesion">
-		</form> -->
 			<!-- <img id="avatar" src="./avatares/yo.png"> --> 
 	</div>
 </header>
 <div id="formularioLogin">
-	<h2>LOOOOGIN</h2>
+	<form>
+		<input type="text" name="nombre" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+		<input type="password" name="password" placeholder="*********">
+		<input type="submit" class="button verde large" value="Iniciar Sesion">
+	</form>
 </div>

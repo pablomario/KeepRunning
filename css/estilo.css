@@ -53,7 +53,7 @@ header input#buscador{
 
 header input#buscador:focus{
 	width: 65%;	
-	border: 1px solid  #95d913;	
+	border: 1px solid  #CDDC39;	
 }
 
 
@@ -73,23 +73,35 @@ header input#buscador:focus{
 	margin-right:10px;
 }
 
+.button:active{
+	margin-top: 3px;
+}
+.button:hover{
+	cursor: pointer;
+}
+
 /*Colores*/
 .button.rosa {
-	background: #FF285D;
-	box-shadow:0px 3px 0px #A12744;
+	background: #E91E63;
+	box-shadow:0px 3px 0px #C2185B;
 }
 
 .button.rosa:hover {
 	background: #FF505F;
 }
 
-.button:active{
-	margin-top: 3px;
+.button.rosa:active{
+	box-shadow:0px 1px 0px #C2185B;
 }
 
-.button.rosa:active{
-	box-shadow:0px 1px 0px #A12744;
+.button.verde {
+	background: #CDDC39;
+	box-shadow:0px 3px 0px #AFB42B;
 }
+.button.verde:hover{
+	background-color: #A7E966;
+}
+
 
 
 
@@ -101,10 +113,28 @@ header img#avatar{
 
 
 #formularioLogin{
-	background-color: #FF2976;
+	background-color: #E91E63;
 	display: none;
 	width: 100%;
 }
+
+#formularioLogin form{
+	margin: 0 auto;
+	width: 80%;
+	padding: 1em;
+	text-align: center;
+}
+
+#formularioLogin form input{
+	padding: 10px;
+	border: 1px solid #ADADAD;
+}
+
+#formularioLogin form input[type="text"], input[type="password"]{
+	width: 20%;
+	border-radius: 5px;
+}
+
 
 
 
@@ -165,7 +195,7 @@ main{
 
 aside{
 	width: 20%;	
-	background-color: #95d913;
+	background-color: #CDDC39;
 }
 
 aside ul li{
@@ -184,7 +214,7 @@ aside ul li a i{
 	padding-right: 1em;
 }
 aside ul li a:hover{
-	background-color: #7AB014;
+	background-color: #AFB42B;
 }
 
 
@@ -242,11 +272,11 @@ article#nuevoUsuario form input,textarea{
 
 article#nuevoUsuario form input:focus{
 	width: 75%;	
-	border: 1px solid  #95d913;	
+	border: 1px solid  #CDDC39;	
 }
 
 article#nuevoUsuario form input[type="submit"]:hover{
-	background: #95d913;
+	background: #CDDC39;
 	cursor: pointer;
 }
 
@@ -284,8 +314,8 @@ article#ayuda h2{
 .menujq h3 {
 	padding: 0.3em;
 	font-weight: 300;
-	background-color: #95d913;
-	border-bottom: 2px solid #88D124;
+	background-color: #CDDC39;
+	border-bottom: 2px solid #AFB42B;
 	color: #fff;
 }
 .menujq h3:hover{
@@ -313,7 +343,7 @@ article#ayuda h2{
 /* Sangrado y segundo color para sub-opciones */
 .menujq ul ul li {
 	padding: 20px;
-	background: #DFF5BD;
+	background: #F0F4C3;
 	text-transform: capitalize;
 }
 
