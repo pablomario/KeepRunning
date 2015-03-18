@@ -28,17 +28,22 @@
 				<p> Actualmente el servio solo esta disponible para Alta de nuevos usuarios residentes en España.</p>
 				<br/>
 				<br/>
-				<form method="POST" action="">
+				<form method="POST" action="./lib/nuevoUsuario.php">
 					<label for="nombre"> Nombre Completo: </label>
-					<input type="text" name="nombre" placeholder="Ej. Pablo Garcia Perez">
+					<input type="text" name="nombre" placeholder="Ej. Pablo Garcia Perez" required>
 					<label for="email1"> Email: </label>
-					<input type="email" name="email1" placeholder="alguien@ejemplo.com">
+					<input type="email" name="email1" placeholder="alguien@ejemplo.com" required>
 					<label for="email2"> Repita Email: </label>
-					<input type="email" name="email2" placeholder="alguien@ejemplo.com">
+					<input type="email" name="email2" placeholder="alguien@ejemplo.com" required>
+					<label for="sexo"> Sexo: </label>
+					<input name="sexo" value="0" type="radio">Femenino<br/>
+					<input name="sexo" value="1" type="radio">Masculino<br/>
+					<label for="nacimiento">Año de Nacimiento</label>
+					<input type="number" name="nacimiento" patter="[0-9]{4,4}" value="1980" required>
 					<label for="password1"> Contraseña: </label>
-					<input type="password" name="password1" placeholder="**************">
+					<input type="password" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="**************" required>
 					<label for="password1"> Repita Contraseña: </label>
-					<input type="password" name="password2" placeholder="**************">
+					<input type="password" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="**************" required>
 					<input type="submit" value="Registrarme">
 				</form>
 			</article>

@@ -30,9 +30,9 @@ $(document).ready(function(){
 		var formulario = $('#formularioLogin');
 
 		if(formulario.is(':visible')){
-			$('#formularioLogin').slideUp('normal');	
+			$('#formularioLogin').slideUp('normal');
 		}else{
-			$('#formularioLogin').slideDown('normal');	
+			$('#formularioLogin').slideDown('normal');
 		}
 	});
 

@@ -9,8 +9,8 @@
 	</div>
 </header>
 <div id="formularioLogin">
-	<form>
-		<input type="text" name="nombre" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+	<form action="./lib/login.php" method="POST">
+		<input type="text" name="email" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
 		<input type="password" name="password" placeholder="*********">
 		<input type="submit" class="button verde large" value="Iniciar Sesion">
 	</form>
