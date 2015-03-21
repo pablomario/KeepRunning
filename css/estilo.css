@@ -1,5 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
+/* Reset */
+
 *{
 	margin: 0;
 	padding: 0;
@@ -10,6 +12,50 @@ body{
 	font-weight: 300;
 }
 
+
+/* Componentes */ 
+
+	.largo{
+		width: 90%;
+	}
+
+
+/* botones */
+
+	.button {
+		display:inline-block;
+		font-size:1em;
+		padding:10px;
+		text-align:center;
+		text-decoration:none;
+		border-radius: 5px;
+	}
+
+	.button:active{
+		margin-top: 5px;
+		box-shadow:0px 0px 0px #373c3c;
+	}
+	.button:hover{
+		cursor: pointer;
+	}
+
+	/*Colores*/
+
+	.button.amarillo {
+		color: #805B06;
+		font-weight: bolder;
+		background: #FECB29;
+		box-shadow:0px 3px 0px #9D5220;
+	}
+	.button.amarillo:hover{
+		background-color: #FFDE73;
+	}
+
+	.button.amarillo:active{
+		background-color: #FFDE73;
+		margin-top: 5px;
+		box-shadow:0px 0px 0px #9D5220;
+	}
 
 
 
@@ -58,63 +104,15 @@ header input#buscador:focus{
 }
 
 
-.button {
-	background:#7f8c8d;
-	color:#fff;
-	display:inline-block;
-	font-size:1em;
-	padding:10px;
-	text-align:center;
-	font-weight: 300;
-	text-decoration:none;
-	box-shadow:0px 3px 0px #373c3c;
-}
-
-.button span {
-	margin-right:10px;
-}
-
-.button:active{
-	margin-top: 3px;
-}
-.button:hover{
-	cursor: pointer;
-}
-
-/*Colores*/
-.button.rosa {
-	background: #E91E63;
-	box-shadow:0px 3px 0px #C2185B;
-}
-
-.button.rosa:hover {
-	background: #FF505F;
-}
-
-.button.rosa:active{
-	box-shadow:0px 1px 0px #C2185B;
-}
-
-.button.verde {
-	background: #CDDC39;
-	box-shadow:0px 3px 0px #AFB42B;
-}
-.button.verde:hover{
-	background-color: #A7E966;
-}
-
-
-
-
 header img#avatar{
 	border-radius: 100%;
 	height: 80px;
 	width: auto;
 }
 
-
 #formularioLogin{
-	background-color: #95D913;
+	background-color: #465866;
+	border-bottom: 3px solid #3FC6F3;
 	display: none;
 	width: 100%;
 }
@@ -217,9 +215,6 @@ aside ul li a i{
 aside ul li a:hover, aside ul li .active{
 	color: #ffffff;
 	background-color: #080808;
-	-webkit-box-shadow: inset 3px 0px 0px 0px #95D913;
-	-moz-box-shadow:    inset 3px 0px 0px 0px #95D913;
-	box-shadow:         inset 3px 0px 0px 0px #95D913;
 }
 
 
@@ -240,7 +235,7 @@ section{
 section article{
 	/* Esto lo meto con FLEX */
 	padding: 1em;
-	width: 90%; /* Ancho para los articulos flex */
+	/* width: 90%; /* Ancho para los articulos flex */
 }
 
 section article.cartel h4{	
@@ -320,9 +315,9 @@ article#ayuda h2{
 .menujq h3 {
 	padding: 0.3em;
 	font-weight: 300;
-	background-color: #BEE1FF;
-	border-bottom: 1px solid #7CAFBD;
-	color: #222222;
+	background-color: #465866;
+	border-bottom: 2px solid #3FC6F3;
+	color: #fff;
 }
 .menujq h3:hover{
 	cursor: pointer;

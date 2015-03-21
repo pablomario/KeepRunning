@@ -23,7 +23,7 @@
 
 		<section>
 
-			<article id="ayuda">
+			<article id="ayuda" class="largo">
 				<h1> Ayuda </h1>
 
 				<h2>¿Que es KeepRunning?</h2>

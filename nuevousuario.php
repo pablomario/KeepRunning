@@ -24,7 +24,7 @@
 		
 		<section>
 		<!-- en formato cartel poner todas las carreras disponibles -->
-			<article id="nuevoUsuario"> 
+			<article id="nuevoUsuario" class="largo"> 
 				<h1> Nuevo Usuario </h1>
 				<p> Actualmente el servio solo esta disponible para Alta de nuevos usuarios residentes en España.</p>
 				<br/>
