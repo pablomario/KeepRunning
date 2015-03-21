@@ -48,7 +48,7 @@ header input#buscador{
 	padding: 10px 10px 10px 40px;
 	border: 1px solid #ADADAD;
 	border-radius: 5px;
-	background: url(../img/lupa.png) 5px 5px no-repeat;
+	background: url(../imgs/lupa.png) 5px 5px no-repeat;
 	transition: .3s;
 }
 
@@ -217,7 +217,9 @@ aside ul li a i{
 aside ul li a:hover, aside ul li .active{
 	color: #ffffff;
 	background-color: #080808;
-	border-left: 1px solid #95D913;
+	-webkit-box-shadow: inset 3px 0px 0px 0px #95D913;
+	-moz-box-shadow:    inset 3px 0px 0px 0px #95D913;
+	box-shadow:         inset 3px 0px 0px 0px #95D913;
 }
 
 
@@ -238,6 +240,7 @@ section{
 section article{
 	/* Esto lo meto con FLEX */
 	padding: 1em;
+	width: 90%; /* Ancho para los articulos flex */
 }
 
 section article.cartel h4{	
@@ -317,9 +320,9 @@ article#ayuda h2{
 .menujq h3 {
 	padding: 0.3em;
 	font-weight: 300;
-	background-color: #CDDC39;
-	border-bottom: 2px solid #AFB42B;
-	color: #fff;
+	background-color: #BEE1FF;
+	border-bottom: 1px solid #7CAFBD;
+	color: #222222;
 }
 .menujq h3:hover{
 	cursor: pointer;
@@ -350,6 +353,18 @@ article#ayuda h2{
 	text-transform: capitalize;
 }
 
+.menujq ul ul li p{
+	width: 90%;
+}
+
+.menujq ul ul li img{
+	max-width: 500px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+
 
 
 /* FOOTER */
@@ -361,8 +376,27 @@ footer {
 	background-color:#1C1C1C;
 }
 
+footer #footer-center{
+	width: 90%;
+	display: block;
+	margin: 0 auto;	
+	text-align: center;
+}
+
+
 footer img{
+	-webkit-filter: grayscale(1);
+  	filter: grayscale(1);
+	max-width: 150px;
+	height: auto;
+	display: inline-block;
 	margin: 0 auto;
 	padding: 2em;
-	display: block;
 }
+
+footer img:hover{
+	cursor: pointer;
+	-webkit-filter: grayscale(0);
+  	filter: grayscale(0);
+}
+

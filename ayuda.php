@@ -32,6 +32,7 @@
 					ningun evento, por eso hemos querido unificar en una misma plataforma el maximo numero de <br>
 					carreras populares. <br>
 				</p>
+				<br/>
 
 				<h2>¿Que ofrecemos?</h2>
 				<p>
@@ -42,33 +43,50 @@
 					Si eres un organizador, puedes crear y gestionar la totalidad de tus carreras populares, </br>
 					en la seccion "Contacto" tienes los pasos a realizar para obtener una prueba gratuita de la plataforma
 				</p>
+				<br/>
 
+				<h2>Uso de las últimas Tecnologias</h2>
+				<p>
+					Se ha prestado en especial interes en usar las últimas tecnologías para obtener el maximo rendimiento
+					y garantizar la mayor experiencia al usuario final.
+				</p>
+				<br/>
 
 				<h1>FAQ´s</h1>
+				<br/>
 				<div class="menujq">
 					<ul>
-						<li><h3><i class="fa fa-sort-desc"></i> Opcion Menu desplegable de ayuda 1</h3>
-							<ul>
-								<li><p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p></li>
-							</ul>
-						</li>
-						<li><h3><i class="fa fa-sort-desc"></i> Opcion Menu desplegable de ayuda 2</h3>
+						<li><h3><i class="fa fa-sort-desc"> </i> ¿Que Base de Datos usa? - MongoDB noSQL</h3>
 							<ul>
 								<li>
+									<img src="./imgs/vendors/mongodb.png"/>
+									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
+								</li>
+							</ul>
+						</li>
+						<li><h3><i class="fa fa-sort-desc"> </i> ¿Porque usa un Framework FrontEnd? - AngularJS</h3>
+							<ul>
+								<li>
+									<img src="./imgs/vendors/angularLogo.png"/>
 									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
 									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
 									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
 								</li>
 							</ul>
 						</li>
-						<li><h3><i class="fa fa-sort-desc"></i> Opcion Menu desplegable de ayuda 3</h3>
+						<li><h3><i class="fa fa-sort-desc"> </i> Servidor JSON - Node.js</h3>
 							<ul>
-								<li><p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p></li>
+								<li>
+									<img src="./imgs/vendors/nodejs.png"/>
+									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
+								</li>
 							</ul>
 						</li>
-						<li><h3><i class="fa fa-sort-desc"></i> Opcion Menu desplegable de ayuda 4</h3>
+						<li><h3><i class="fa fa-sort-desc"></i> PHP5.6 y MongoDB </h3>
 							<ul>
-								<li><p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p></li>
+								<li>
+									<p>Respuesta al menu de ayuda y bla bla bla bla bla bla</p>
+								</li>
 							</ul>
 						</li>
 					</ul>
