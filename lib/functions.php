@@ -7,9 +7,14 @@
 	}
 
 	function insertarUsuario($documento){
-		$mongo = conexion();
-		$coleccion = $mongo->usuarios; // Decimos a que tabla queremos acceder
-		$coleccion->insert($documento);
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios; // Decimos a que tabla queremos acceder
+			$coleccion->insert($documento);
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}		
 	}
 
 	function mostrarDatos(){

@@ -3,9 +3,7 @@
 	<div id="headerleft"> <img id="logotipo" src="./imgs/logo.png"> </div> 
 	<div id="headercenter"> <input id="buscador" type="search"> </div>
 	<div id="headerright">
-		<a href="#" id="buttonLogin" class="button amarillo large">Iniciar Sesion</a>
-		<?php  ?>
-			<!-- <img id="avatar" src="./avatares/yo.png"> --> 
+		<a id="buttonLogin" class="button amarillo large">Iniciar Sesion</a>
 	</div>
 </header>
 <div id="formularioLogin">

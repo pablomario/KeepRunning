@@ -16,7 +16,7 @@ body{
 /* Componentes */ 
 
 	.largo{
-		width: 90%;
+		min-width: 90%;
 	}
 
 

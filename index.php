@@ -1,4 +1,4 @@
-<html lang="es">
+<html lang="es" ng-app="app">
 <head>
 	<title>Keep</title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
@@ -8,6 +8,7 @@
 </head>
 <body>
 	<?php include('./includes/cabecera.php'); ?>
+
 	<nav>
 		<!-- Indicar la seccion donde estoy alguna opcion de visualizar contenido
 			y poner boton de registro o si ya estas dado de alta apra apuntarse a una
@@ -21,16 +22,15 @@
 		<?php include('./includes/menu.php'); ?>
 		
 		<section>
-		<!-- en formato cartel poner todas las carreras disponibles -->
-		<?php 
-			for($i = 0; $i < 14; $i++){
-				echo '<article class="cartel"> <img src="./carreras/cartel.png"> <h4> I Carrera del Torrezno </h4> <p>Inscripcion Cerrada</p></article>';
-			}
-		?>
-			
-			
+			<div ng-view></div>
 		</section>
+		
+
 	</main>
 	<?php include('./includes/pie.php'); ?>
+
+	<script type="text/javascript" src="./angular/angular.js"></script>
+	<script type="text/javascript" src="./angular/angular-route.js"></script>
+	<script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>
