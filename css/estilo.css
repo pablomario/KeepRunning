@@ -222,8 +222,11 @@ aside ul li a:hover, aside ul li .active{
 
 /* SECTION CARRERAS*/ 
 
-section{
+.seccion{
 	width: 85%;
+}
+
+section{
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;
@@ -240,12 +243,12 @@ section article{
 	/* width: 90%; /* Ancho para los articulos flex */
 }
 
-section article h1{
+section h1{
 	font-weight: 300;
 	font-size: 4em;
 }
 
-section article h2{
+section h2{
 	font-weight: 300;
 	font-size: 2em;
 }
@@ -299,7 +302,6 @@ section article.cartel p{
 /* CARRERA INDIVIDUAL */
 
 section#single{
-	width: 85%;
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;

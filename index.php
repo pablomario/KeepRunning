@@ -21,9 +21,9 @@
 	<main>
 		<?php include('./includes/menu.php'); ?>
 		
-		<section>
-			<div ng-view></div>
-		</section>
+		
+			<div class="seccion" ng-view></div>
+		
 		
 
 	</main>
