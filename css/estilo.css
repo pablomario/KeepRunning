@@ -227,7 +227,7 @@ section{
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;
-	justify-content: space-around;
+	justify-content: flex-start;
 	align-items: stretch;
 	align-items: -webkit-stretch;	
 }
@@ -235,35 +235,28 @@ section{
 section article{
 	/* Esto lo meto con FLEX */
 	padding: 1em;
+	margin: 1em;
+	width: 100%;
 	/* width: 90%; /* Ancho para los articulos flex */
 }
 
-section article.cartel h4{	
-	color:#1C1C1C;
-}
-
-section article.cartel p{	
-	color:#2B2B2B;
-}
-
-
-
-/* NUEVO USUARIO */
-
-article#nuevoUsuario h1{
+section article h1{
 	font-weight: 300;
 	font-size: 4em;
 }
 
-
-article#nuevoUsuario form{
-
+section article h2{
+	font-weight: 300;
+	font-size: 2em;
 }
 
 
-article#nuevoUsuario form input,textarea{
+
+/* FORMULARIOS */
+
+article form input,textarea{
 	display: block;
-	width: 60%;
+	width: 100%;
 	margin: 1em;
 	padding: 7px;
 	border: 1px solid #ADADAD;
@@ -271,39 +264,53 @@ article#nuevoUsuario form input,textarea{
 	transition: .3s;
 }
 
-article#nuevoUsuario form input:focus{
-	width: 75%;	
+article form input:focus{
 	border: 1px solid  #CDDC39;	
 }
 
-article#nuevoUsuario form input[type="submit"]:hover{
+article form input[type="submit"]:hover{
 	background: #CDDC39;
 	cursor: pointer;
 }
 
 
-/* CONTACTO */
+/* CARTELES */
 
-article#contacto h1{
-	font-weight: 300;
-	font-size: 4em;
+section article.cartel{
+	width: 20%!important;
+}
+
+section article.cartel img{
+	display: block;
+	margin: 0 auto;
+}
+
+section article.cartel h4{
+	text-align: center;	
+	color:#1C1C1C;
+}
+
+section article.cartel p{
+	text-align: center;	
+	color:#2B2B2B;
+}
+
+
+/* CARRERA INDIVIDUAL */
+
+section#single{
+	width: 85%;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: stretch;
+	align-items: -webkit-stretch;	
 }
 
 
 
-/* AYUDA */
-
-article#ayuda h1{
-	font-weight: 300;
-	font-size: 4em;
-}
-
-article#ayuda h2{
-	font-weight: 300;
-	font-size: 2em;
-}
-
-/* Acordeon para la ayuda */
+/* ACORDEON AYUDA */
 
 .menujq{
 	margin-bottom: 2em;
@@ -369,13 +376,12 @@ footer {
 	width: 100%;
 	height: auto;
 	background-color:#1C1C1C;
-}
-
-footer #footer-center{
-	width: 90%;
-	display: block;
-	margin: 0 auto;	
-	text-align: center;
+	display: flex;
+	display: -webkit-flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-items: -webkit-center;
 }
 
 
