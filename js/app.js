@@ -93,6 +93,15 @@ app.controller('enlacesmenu', ['$scope', 'enlacesMenu', function($scope,enlacesM
 
 // AJAX
 
+app.controller('proximasCarreras', ['$scope','$http', function($scope,$http){
+    $scope.caca ="Pura mierda el JS";
+    
+    $http.get("lib/ajaxphp.php").success(function(carrerasP){
+        $scope.carreras = carrerasP;
+
+    });
+
+}]);
 
 
 app.controller('dcAjax', ['$scope','$http', function($scope,$http){

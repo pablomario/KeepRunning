@@ -18,7 +18,7 @@
 	}
 
 	function mostrarDatos(){
-		$mongo = conexion(); //Recivo la conexion
+		$mongo = conexion(); //Recibo la conexion
 		$coleccion = $mongo->usuarios; //Establezco con que tabla quiero trabajar
 		$cursor = $coleccion->find();
 		foreach($cursor as $documento){
@@ -26,6 +26,22 @@
 		}
 	}
 
+
+	function proximasCarreras(){
+		// Funcion que recoge el nombre la imagen de portada y el id de las carreras
+		$mongo = conexion(); //Recibo la conexion
+		$coleccion = $mongo->carreras; //Establezco con que tabla quiero trabajar
+		$cursor = $coleccion->find();
+		$json = [];
+		$objeto = [];
+		foreach($cursor as $documento){
+			$objeto['id'] = $documento['_id']; 
+			$objeto['nombre'] = $documento["edicion"]." ".$documento["nombre"];
+			$objeto['cartel'] = $documento["imagenCartel"];
+			$json = $objeto;
+		}
+		return $json;
+	}
 
 
 

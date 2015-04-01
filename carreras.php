@@ -1,11 +1,10 @@
-<section>
-	<!-- en formato cartel poner todas las carreras disponibles -->
-	<?php 
-		for($i = 0; $i < 14; $i++){
-			echo '<article class="cartel"> <img src="./imgs/carreras/cartel.png"> <a href="http://127.0.0.1/pmKeep/#/single/'.$i.'">
-			<h4> I Carrera del Torrezno </h4></a> <p>Inscripcion Cerrada</p></article>';
-		}
-	?>
+<section ng-controller="proximasCarreras">
+	
+{{carreras}}
+{{caca}}
+<article class="cartel" ng-repeat="(key in carreras)">
+	<img src="{{key.cartel}}"><a href="http://127.0.0.1/pmKeep/#/single/{{key.id}}">{{key.nombre}}</a>
+</article>
 
-
+ 	
 </section>
