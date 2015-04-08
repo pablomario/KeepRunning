@@ -1,0 +1,1 @@
+{ "options" : { "create" : "carreras" }, "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "ns" : "keeprunning.carreras", "name" : "_id_" } ] }
