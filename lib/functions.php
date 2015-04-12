@@ -35,10 +35,10 @@
 		$json = [];
 		$objeto = [];
 		foreach($cursor as $documento){
-			$objeto['id'] = $documento['_id']; 
+			/* $objeto['id'] = $documento['_id']; 
 			$objeto['nombre'] = $documento["edicion"]." ".$documento["nombre"];
-			$objeto['cartel'] = $documento["imagenCartel"];
-			$json = $objeto;
+			$objeto['cartel'] = $documento["imagenCartel"]; */
+			$json[] = $documento;
 		}
 		return $json;
 	}
