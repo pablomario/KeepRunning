@@ -59,12 +59,15 @@
 
 
 
-<section id="section_single" ng-controller="dcAjax">
+<section id="section_single" data-ng-controller="single" >
 	<!-- en formato cartel poner todas las carreras disponibles -->
 	<div id="cabecera_single"></div>
 	<header id="header_single">
 		<div class="contenido_single">
-			<h1>{{resultado}}</h1>
+			
+		
+
+
 		</div>
 		
 		<aside class="lateral_single"></aside>
@@ -73,17 +76,8 @@
 		<div class="contenido_single">
 			<h2>Bienvenido</h2>
 			<p>
-				La asociación cultural y deportiva “los elegantes”, con la colaboración del Ayuntamiento de Almaluez, 
-				organiza la I Carrera Popular del Torrezno que tendrá lugar en Chércoles (soria) el próximo 9 de Agosto 
-				de 2014 a las 18:30h de la Tarde.
-				Se trata de dos carreras una popular de 1KM y otra de 7KM más profesional y 
-				exigente ya que se sube cerca de los 1000 metros de altura.
-				Como principales atractivos están aparte de realizar deporte que es sano y saludable, 
-				la organización entregará un torrezno recién cocinado a todos los participantes de nuestro patrocinador 
-				Moreno Sáez, así como un boleto de bingo para un gran bingo que se realizará ese mismo día por la noche.
-				Puedes apuntarte a la carrera con camiseta o no e incluso si eliges la opción de camiseta puedes 
-				elegir la talla.
-				El día de la carrera, la inscripción será de 1 euro más por inscrito y sin posibilidad de elegir camiseta.
+				 <h1>{{ok}}</h1> 
+				 <h1>{{carrera}}</h1> 
 			</p>
 
 			<h2>Algunas fotos de años anteriores</h2>

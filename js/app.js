@@ -1,6 +1,12 @@
 var app = angular.module("app", ["ngRoute"]);
 
 
+
+
+/**
+ * RouteProvide
+ * Prametros de las rutas 
+ */
 app.config(['$routeProvider', function($routeProvider)
 {
     $routeProvider.when("/carreras",
@@ -35,10 +41,11 @@ app.config(['$routeProvider', function($routeProvider)
     .otherwise({ redirectTo : "/" });
 }]);
 
+/*
 app.controller('single', ['$scope', '$routeParams' , function($scope,$routeParams){
     $scope.variable = "single";
-    $scope.carreraId = $routeParams.carreraId;
-}])
+    $scope.identificador = $routeParams.identificador;
+}]); */
 
 app.controller('carreras', ['$scope', function($scope)
 {
@@ -71,7 +78,10 @@ app.controller('contacto', ['$scope', function($scope)
 }]);
 
 
-// SECCIONES DEL MENU
+/**
+ * Construccion del Menu
+ *
+ */
 app.factory('enlacesMenu', function(){
     return{
         menu : [
@@ -87,27 +97,46 @@ app.factory('enlacesMenu', function(){
 
 app.controller('enlacesmenu', ['$scope', 'enlacesMenu', function($scope,enlacesMenu){
     $scope.menu = enlacesMenu.menu;
-    $scope.caca = "AAAAAAAAAAAAAAAAAAAAAA";
 }])
 
 
-// AJAX
 
-app.controller('proximasCarreras', ['$scope','$http', function($scope,$http){
-    $scope.caca ="Pura mierda el JS";
-    
-    $http.get("lib/ajaxphp.php").success(function(carrerasP){
+
+/* [FUNCIONES AJAX]  */
+
+/**
+ * Controller proximasCarreras
+ * Este controlador obtiene todas las carreras actuales traidas a traves de ajax 
+ * las almacena en objeto JSON
+ * @param  {[type]} $scope   [description]
+ * @param  {[type]} $http){                      $http.get("lib/ajaxProximas.php").success(function(carrerasP){        $scope.carreras [description]
+ * @return {[type]}          [description]
+ */
+app.controller('proximasCarreras', ['$scope','$http', function($scope,$http){     
+    $http.get("lib/ajaxProximas.php").success(function(carrerasP){
         $scope.carreras = carrerasP;
-
     });
-
 }]);
 
 
-app.controller('dcAjax', ['$scope','$http', function($scope,$http){
-
-    $http.get("lib/ajaxphp.php").success(function(textoP){
-        $scope.resultado = textoP;
-    });
-
+/**
+ * Controller Single
+ * funcion que obtiene el ID de una carrera en el RouteParams y por ajax
+ * obtiene el objeto JSON.
+ * @param  {[type]} $scope          [description]
+ * @param  {[type]} $http           [description]
+ * @param  {[type]} $routeParams){                  $scope.identificador [description]
+ * @return {[type]}                 [description]
+ */
+app.controller('single', ['$scope','$http', '$routeParams', function($scope,$http,$routeParams){
+     $scope.identificador = $routeParams.carreraId;
+     // La peticion la hago get ya que post no funciona correctamente
+     // obtenemos el id a traves de $routeParams.carreraId que esta en los RouteProviders
+    $http.get('lib/ajaxSingle.php?id='+$routeParams.carreraId+' ').success(function(response){
+        $scope.carrera = response;  
+        $scope.ok = response.nombre;      
+    }); 
 }]);
+
+
+
