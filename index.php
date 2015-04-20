@@ -14,7 +14,7 @@
 			y poner boton de registro o si ya estas dado de alta apra apuntarse a una
 			carrera -->
 		<div id="navleft"> <h3> <i class="fa fa-bars"></i> Menu </h3> </div>
-		<div id="navcenter"> <h3> Portada </h3> </div>
+		<div id="navcenter"> <h3 class="navActual"><i class="fa fa-eye"></i> Portada </h3> </div>
 		<div id="navright"> </div>
 	</nav>
 

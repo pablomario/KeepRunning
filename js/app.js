@@ -134,7 +134,6 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
      // obtenemos el id a traves de $routeParams.carreraId que esta en los RouteProviders
     $http.get('lib/ajaxSingle.php?id='+$routeParams.carreraId+' ').success(function(response){
         $scope.carrera = response;  
-        $scope.ok = response.nombre;      
     }); 
 }]);
 

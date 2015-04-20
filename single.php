@@ -59,15 +59,14 @@
 
 
 
-<section id="section_single" data-ng-controller="single" >
+
+
+<section id="section_single" ng-controller="single" ng-repeat="key in carrera" >
 	<!-- en formato cartel poner todas las carreras disponibles -->
 	<div id="cabecera_single"></div>
 	<header id="header_single">
 		<div class="contenido_single">
-			
-		
-
-
+			<h1>{{key.edicion}} {{key.nombre}}</h1> 
 		</div>
 		
 		<aside class="lateral_single"></aside>
@@ -76,41 +75,32 @@
 		<div class="contenido_single">
 			<h2>Bienvenido</h2>
 			<p>
-				 <h1>{{ok}}</h1> 
-				 <h1>{{carrera}}</h1> 
+				{{key.descripcion}}
 			</p>
 
 			<h2>Algunas fotos de años anteriores</h2>
 			<p class="carrousel">
 				<img src="./imgs/carreras/cartel.png"> <img src="./imgs/carreras/cartel.png"> <img src="./imgs/carreras/cartel.png">
-
-			</p>
-
-			<h2>RECOGIDA DORSAL</h2>
-			<p>
-				La entrega de dorsales y camisetas  se realizará  en la plaza mayor de Chércoles de 18:00 a 20:00 el 
-				dia 08 de Agosto.  Será necesario acreditar la identidad y entregar el recibo de pago. 
-				Para recoger el dorsal de otra persona, será necesario entregar una autorización firmada 
-				con el nº de DNI del atleta.
 			</p>
 			
-			<h2>¿Qué es lo que incluye el kit del participante?</h2>
-			<p>
-				Dorsal, cartón de bingo para el mismo dia de la prueba 09 de agosto por la noche que se 
-				celebrará en la localidad, merchandising y camiseta técnica (en el caso de solicitarla).
-			</p>
 
 		</div>
 		
 		<aside class="lateral_single">
-				
-			<img src="./imgs/carreras/cartel.png"> <a href="http://127.0.0.1/pmKeep/#/single/'.$i.'">
-			<h4> I Carrera del Torrezno </h4></a> <p>Inscripcion Cerrada</p>
+			<h4>{{key.fecha}}</h4>
+			<h4>{{key.hora}}</h4>
+			<h4>Localizacion: <a href="{{key.localizacion}}"> ver mapa</a></h4>
+			<img src="{{key.imagenCartel}}"/>
+			<h4> Contacto: </h4>
+			<p>Email: {{key.contactoEmail}}</p>
+			<p>Telefono: {{key.contactoTelef}}</p>
 
 		</aside>
 
-		<footer id="footer_single">			
+		<footer id="footer_single">		
+			<h2>Patrocinadores</h2>
 			<p class="carrousel">
+
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">

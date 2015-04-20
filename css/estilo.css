@@ -10,6 +10,7 @@
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 300;
+	background: #EEEEEE;
 }
 
 
@@ -75,6 +76,7 @@ body{
 
 header{
 	width: 100%;
+	background: #ffffff;
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;
@@ -149,7 +151,7 @@ header img#avatar{
 
 nav{
 	width: 100%;
-	background-color: #455A64;
+	background-color: #2a3038;
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;
@@ -160,11 +162,18 @@ nav{
 
 nav h3{	
 	padding: 1em;
+	display: block;
+	
+}
+
+nav .navActual{
+	display: inline-block;
+	background: #9bbe45;
+	width: auto;
 }
 
 #navleft{
 	width: 15%;
-	background-color: #607D8B;
 	text-align: center;
 	color: #ffffff;
 }
@@ -172,7 +181,6 @@ nav h3{
 #navcenter{
 	width: 65%;
 	text-align: left;
-	text-indent: 2em;
 	color: #FFFFFF;
 }
 
@@ -200,7 +208,7 @@ main{
 
 aside{
 	width: 15%;	
-	background-color: #455A64;
+	background-color: #2e343d;
 }
 
 aside ul li{
@@ -220,9 +228,13 @@ aside ul li a i{
 }
 
 
-aside ul li a:hover, aside ul li .active{
+aside ul li a:hover{
+	color: #9bbe45;
+	background-color: #2a3038;
+}
+
+aside ul li .active{
 	color: #ffffff;
-	background-color: #080808;
 }
 
 
@@ -284,7 +296,11 @@ article form input:focus{
 /* CARTELES */
 
 section article.cartel{
-	width: 20%!important;
+	width: 250px!important;
+	padding: 0!important;
+	margin: 1.5em!important;
+	background: #ffffff;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 section article.cartel img{
@@ -292,15 +308,29 @@ section article.cartel img{
 	margin: 0 auto;
 }
 
-section article.cartel h4{
-	text-align: center;	
-	color:#1C1C1C;
+section article.cartel .contenido{
+	padding: 25px 3px 25px 10px;	
+	text-align: left;
 }
 
-section article.cartel p{
-	text-align: center;	
-	color:#2B2B2B;
+section article.cartel h4{
+	font-size: 1.2em;
+	padding-bottom: 15px;
+	color: #9bbe45;
 }
+
+section article.cartel a{
+	text-decoration: none;
+	color: #455A64;
+}
+
+section article.cartel a:hover{
+	color: #171B20;
+}
+
+
+
+
 
 
 /* CARRERA INDIVIDUAL */
@@ -381,7 +411,7 @@ footer {
 	bottom: 0;
 	width: 100%;
 	height: auto;
-	background-color:#1C1C1C;
+	background-color: #2a3038;
 	display: flex;
 	display: -webkit-flex;
 	flex-flow: row wrap;
