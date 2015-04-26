@@ -2,26 +2,47 @@
 	<script type="text/javascript" src="./js/acordeon.js"></script>
 
 
-		<section>
+	
 
-			<article id="ayuda" class="largo">
-				<h1> Ayuda </h1>
-				 
+<section id="section_single">
+
+<style type="text/css">
+	#cabecera_single{
+		background: url(./imgs/portada/otr.png) center center;
+		background-size: cover;
+	}
+
+</style>
+
+	<!-- en formato cartel poner todas las carreras disponibles -->
+	<div id="cabecera_single"></div>
+	<header id="header_single">
+		<div class="contenido_single">
+			<h1>Ayuda</h1> 
+		</div>
+		
+		<aside class="lateral_single">
+			
+		</aside>
+	</header>
+	<article id="article_single"> 
+		<div class="contenido_single">
+		
 				<h2>¿Que es KeepRunning?</h2>
 				<p>
-					Somos una plataforma cercana, creada por y para deportistas, sabemos que te gusta correr y que no dejas escapar<br>
-					ningun evento, por eso hemos querido unificar en una misma plataforma el maximo numero de <br>
-					carreras populares. <br>
+					Somos una plataforma cercana, creada por y para deportistas, sabemos que te gusta correr y que no dejas escapar
+					ningun evento, por eso hemos querido unificar en una misma plataforma el maximo numero de 
+					carreras populares. 
 				</p>
 				<br/>
 
 				<h2>¿Que ofrecemos?</h2>
 				<p>
-					Si eres corredor te damos la oportunidad de apuntarte y llevar el control de todas las carreras en</br>
+					Si eres corredor te damos la oportunidad de apuntarte y llevar el control de todas las carreras en
 					las que participas desde un mismo lugar
 				</p>
 				<p>
-					Si eres un organizador, puedes crear y gestionar la totalidad de tus carreras populares, </br>
+					Si eres un organizador, puedes crear y gestionar la totalidad de tus carreras populares,
 					en la seccion "Contacto" tienes los pasos a realizar para obtener una prueba gratuita de la plataforma
 				</p>
 				<br/>
@@ -73,5 +94,11 @@
 					</ul>
 				</div>
 
-			</article>
-		</section>
+	
+			
+
+			
+		</div>
+	</article>
+
+</section>

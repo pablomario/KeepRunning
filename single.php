@@ -1,79 +1,4 @@
 
-<style type="text/css">
-		
-		#cabecera_single{
-			width: 100%;
-			height: 450px;
-		}
-
-		#section_single{
-			justify-content: center!important;
-		}
-
-		#header_single{
-			width: 80%;
-			padding: 1em;
-			height: 8em;
-			margin-top: -10em;
-			background: rgba(255,255,255,0.8);
-
-		}
-
-		#article_single{
-			background-color: #fff;
-			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-			width: 80%;
-			margin: 0;
-		}
-
-		#article_single h2{
-			margin-top: 1em;
-		}
-
-		.contenido_single{
-			width: 79%;
-			float: left;
-		}
-
-		.lateral_single{
-			width: 20%;
-			min-height: 7em;
-			background: transparent;
-			float: right;
-		}
-
-		.lateral_single h2{
-			text-align: left;
-			font-size: 1.5em;
-			margin-bottom: 1em;
-		}
-
-		.boton_inscripcion{
-			text-align: center;
-			padding: 20px;
-			margin-bottom: 20px;
-		}
-
-		.carrousel{
-			text-align: center;
-		}
-		.carrousel img{
-			width: 200px;
-			height: auto;
-			margin: 10px;
-		}
-
-		#footer_single{
-			background: transparent;
-			text-align: center!important;
-		}
-
-
-
-</style>
-
-
-
 
 
 <section id="section_single" ng-controller="single" ng-repeat="key in carrera" >
@@ -83,7 +8,6 @@
 		background: url({{key.imagenCabecera}}) center center;
 		background-size: cover;
 		width: 100%;
-		height: 450px;
 	}
 
 </style>
@@ -95,7 +19,11 @@
 			<h1>{{key.edicion}} {{key.nombre}}</h1> 
 		</div>
 		
-		<aside class="lateral_single"></aside>
+		<aside class="lateral_single">
+			<div ng-if="key.inscripcion">
+				<a id="buttonLogin" class="button rosa big">Inscripción</a>
+			</div>
+		</aside>
 	</header>
 	<article id="article_single"> 
 		<div class="contenido_single">
@@ -116,10 +44,8 @@
 		</div>
 		
 		<aside class="lateral_single">
-			<div class="boton_inscripcion" ng-if="key.inscripcion">
-				<h2>Inscripciones Abiertas</h2>
-				<a id="buttonLogin" class="button verde">Participar</a>
-			</div>
+			
+			
 		
 			<h3>Fecha:</h3>
 			<h4>{{key.fecha}} - {{key.hora}}</h4>	

@@ -10,34 +10,37 @@ var app = angular.module("app", ["ngRoute"]);
 app.config(['$routeProvider', function($routeProvider)
 {
     $routeProvider.when("/carreras",{
-        templateUrl : "carreras.php",
+        templateUrl : "./carreras.php",
         controller : "carreras"
     })
     .when("/nuevousuario",{
-        templateUrl : "nuevousuario.php",
+        templateUrl : "./nuevousuario.php",
         controller : "nuevousuario"
     })
     .when("/organizadores",{
-    	templateUrl : "organizadores.php",
+    	templateUrl : "./organizadores.php",
     	controller : "organizadores"
     })
     .when("/ayuda",{
         templateUrl : "ayuda.php",
         controller : "ayuda"
     })
-     .when("/contacto",{
-        templateUrl : "contacto.php",
+    .when("/contacto",{
+        templateUrl : "./contacto.php",
         controller : "contacto"
     })
-     .when("/single/:carreraId",{
-        templateUrl : "single.php",
+    .when("/single/:carreraId",{
+        templateUrl : "./single.php",
         controller : "single"
      })
-     .when("/portada",{
-        templateUrl : "portada.php",
+    .when("/portada",{
+        templateUrl : "./portada.php",
         controller: "portada"
      })
-    .otherwise({ templateUrl : "portada.php", controller: "portada" });
+    .when("/privacidad",{
+        templateUrl : "./privacidad.php"
+     })
+    .otherwise({ templateUrl : "./portada.php", controller: "portada" });
 }]);
 
 /*
