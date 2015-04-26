@@ -9,28 +9,23 @@ var app = angular.module("app", ["ngRoute"]);
  */
 app.config(['$routeProvider', function($routeProvider)
 {
-    $routeProvider.when("/carreras",
-    {
+    $routeProvider.when("/carreras",{
         templateUrl : "carreras.php",
         controller : "carreras"
     })
-    .when("/nuevousuario",
-    {
+    .when("/nuevousuario",{
         templateUrl : "nuevousuario.php",
         controller : "nuevousuario"
     })
-    .when("/organizadores",
-    {
+    .when("/organizadores",{
     	templateUrl : "organizadores.php",
     	controller : "organizadores"
     })
-    .when("/ayuda",
-    {
+    .when("/ayuda",{
         templateUrl : "ayuda.php",
         controller : "ayuda"
     })
-     .when("/contacto",
-    {
+     .when("/contacto",{
         templateUrl : "contacto.php",
         controller : "contacto"
     })
@@ -38,7 +33,11 @@ app.config(['$routeProvider', function($routeProvider)
         templateUrl : "single.php",
         controller : "single"
      })
-    .otherwise({ redirectTo : "/" });
+     .when("/portada",{
+        templateUrl : "portada.php",
+        controller: "portada"
+     })
+    .otherwise({ templateUrl : "portada.php", controller: "portada" });
 }]);
 
 /*
@@ -47,33 +46,40 @@ app.controller('single', ['$scope', '$routeParams' , function($scope,$routeParam
     $scope.identificador = $routeParams.identificador;
 }]); */
 
+app.controller('portada', ['$scope', function($scope)
+{
+    $scope.lugar = "Portada";
+
+}]);
+
+
 app.controller('carreras', ['$scope', function($scope)
 {
-	$scope.variable = "carreras";
+	$scope.lugar = "Proximas Carreras";
 
 }]);
 
 app.controller('nuevousuario', ['$scope', function($scope)
 {
-	$scope.variable = "nuevousuario";
+	$scope.lugar = "Nuevo Usuario";
 
 }]);
 
 app.controller('organziadores', ['$scope', function($scope)
 {
-	$scope.variable = "organizadores";
+	$scope.lugar = "Organizadores";
 
 }])
 
 app.controller('ayuda', ['$scope', function($scope)
 {
-    $scope.variable = "ayuda";
+    $scope.lugar = "Ayuda";
 
 }]);
 
 app.controller('contacto', ['$scope', function($scope)
 {
-    $scope.variable = "contacto";
+    $scope.lugar= "Contacto";
 
 }]);
 
@@ -85,7 +91,7 @@ app.controller('contacto', ['$scope', function($scope)
 app.factory('enlacesMenu', function(){
     return{
         menu : [
-            {nombre:"Portada",           url: "index.php",      icon:"fa fa-home"},
+            {nombre:"Portada",           url: "portada",        icon:"fa fa-home"},
             {nombre:"Proximas Carreras", url: "carreras",       icon:"fa fa-globe"},
             {nombre:"Nuevo Usuario",     url: "nuevousuario",   icon:"fa fa-user-plus"},
             {nombre:"Organizadores",     url: "organizadores",  icon:"fa fa-cube"},

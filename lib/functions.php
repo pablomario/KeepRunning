@@ -85,11 +85,14 @@
 		$json = [];
 		$objeto = [];
 		foreach($item as $documento){
+			$objeto['id']             = $identificador;
 			$objeto['nombre']         = $documento['nombre'];
 			$objeto['edicion']        = $documento['edicion'];
+			$objeto['inscripcion']    = $documento['inscripcion'];
 			$objeto['fecha']          = $documento['fecha'];
 			$objeto['hora']           = $documento['hora'];
 			$objeto['descripcion']    = $documento['descripcion'];
+			$objeto['video']          = $documento['video'];
 			$objeto['localizacion']   = $documento['localizacion'];
 			$objeto['contactoEmail']  = $documento['contactoEmail'];
 			$objeto['contactoTelef']  = $documento['contactoTelef'];

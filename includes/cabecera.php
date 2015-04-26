@@ -1,9 +1,9 @@
 <header>
 	<!-- Logotipo y cosas de el usuario -->
-	<div id="headerleft"> <img id="logotipo" src="./imgs/logo.png"> </div> 
+	<div id="headerleft"> <img id="logotipo" src="./imgs/KeepRunning.svg" style="height:70px; width: auto"> </div> 
 	<div id="headercenter"> <input id="buscador" type="search"> </div>
 	<div id="headerright">
-		<a id="buttonLogin" class="button">Iniciar Sesion</a>
+		<a id="buttonLogin" class="button azul">Iniciar Sesion</a>
 	</div>
 </header>
 <div id="formularioLogin">

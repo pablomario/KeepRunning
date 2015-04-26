@@ -9,20 +9,25 @@
 <body>
 	<?php include('./includes/cabecera.php'); ?>
 
-	<nav>
+	<!-- <nav>
 		<!-- Indicar la seccion donde estoy alguna opcion de visualizar contenido
 			y poner boton de registro o si ya estas dado de alta apra apuntarse a una
-			carrera -->
+			carrera
 		<div id="navleft"> <h3> <i class="fa fa-bars"></i> Menu </h3> </div>
-		<div id="navcenter"> <h3 class="navActual"><i class="fa fa-eye"></i> Portada </h3> </div>
+		<div id="navcenter"> <h3 class="navActual"><i class="fa fa-eye"></i> {{lugar}} </h3> </div>
 		<div id="navright"> </div>
-	</nav>
+	</nav> -->
+
 
 	<main>
 		<?php include('./includes/menu.php'); ?>
 		
 		
-			<div class="seccion" ng-view></div>
+			<div class="seccion" ng-view>
+				
+
+
+			</div>
 		
 		
 
