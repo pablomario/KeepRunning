@@ -12,6 +12,44 @@
 	}
 
 
+	/************************** LOGIN *************************/
+
+	/**
+	 * [login description]
+	 * Funcion para Iniciar Sesion en el sistema
+	 * @param  [string] $email    email del usuario
+	 * @param  [string] $password contraseña del usuario
+	 * @return [boolean]   		  	        
+	 */
+	function login($email, $password){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios;
+			$userDatabaseFind = $coleccion->find(array('email' => $email)); 				
+			//Recorremos el resultado para obtener los valores
+			foreach($userDatabaseFind as $documento) {
+				$storedUserName     = $documento['nombre'];
+				$storedUserEmail    = $documento['email'];
+				$storedUserPassword = $documento['password'];
+			}
+
+			if($email == $storedUserEmail && $password == $storedUserPassword){ 
+				session_start();
+					$_SESSION['authentication'] = 1;
+					$_SESSION['nombre'] = $storedUserName;
+					$_SESSION['email'] = $storedUserEmail;
+				return true;
+			}else{				
+				return false;
+			}
+		}catch(MongoCursorException $e){
+			return false;
+		}			
+	}
+
+
+
+
 	/**
 	 * [insertarUsuario description]
 	 * Guardar Usuario en MongoDB

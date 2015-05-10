@@ -1,7 +1,7 @@
 
-
-
-<section id="section_single" ng-controller="single" ng-repeat="key in carrera" >
+<?php session_start(); ?>	
+<?php echo $_SESSION['nombre']; ?>
+<section id="section_single" ng-controller="single" ng-repeat="key in carrera" ng-init="usuario = ' <?= $_SESSION['email']; ?>  ' ">
 
 <style type="text/css">
 	#cabecera_single{
@@ -20,10 +20,25 @@
 		</div>
 		
 		<aside class="lateral_single">
-			<div ng-if="key.inscripcion">
-				<a id="buttonLogin" class="button rosa big">Inscripción</a>
-			</div>
+			<?php
+				if($_SESSION['authentication'] == 1){
+					echo '<div ng-if="key.inscripcion == true">';
+						echo '<a id="buttonLogin" class="button rosa big">Inscripción</a>';
+					echo '</div>';
+					echo '<div ng-if="key.inscripcion==false">';
+						echo '<a id="buttonLogin" class="button azul big" ng-click=inscripcion(usuario,key.id)>CERRADO</a>';
+					echo '</div>';
+				}else{
+					echo '<h2 class="alert"><i class="fa fa-exclamation-triangle"></i> Debes estar registrado para inscribirte</h2>';
+				}
+			?>
+			
+			
 		</aside>
+
+
+
+
 	</header>
 	<article id="article_single"> 
 		<div class="contenido_single">

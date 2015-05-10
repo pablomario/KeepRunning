@@ -1,10 +1,19 @@
 <?php
 
+	require_once('./functions.php');
+
 	if(!empty($_POST['email']) && !empty($_POST['password']) && $_POST['email'] != "" && $_POST['password'] != "" ){
-		//Validar USUARIO
-		header('Location: ../app/dashboard.php');
+		
+		if( login($_POST['email'], $_POST['password']) ){
+			header('Location: ../#/carreras.php');
+		}else{
+			header('Location: ../#/portada.php');
+		}
 	}else{
-		header('Location: ../index.php');
+		header('Location: ../#/portada.php');
 	}
+
+
+
 
 ?>

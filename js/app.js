@@ -144,7 +144,13 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
     $http.get('lib/ajaxSingle.php?id='+$routeParams.carreraId+' ').success(function(response){
         $scope.carrera = response;  
     }); 
-}]);
 
+    $scope.inscripcion = function(usuario , carrera){
+        alert("CARRERA:"+carrera+" USUARIO: "+usuario);
+    }
+
+
+
+}]);
 
 
