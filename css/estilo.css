@@ -32,15 +32,41 @@
 		float: right;
 	}
 
-	.alert{
-		text-align: center!important;
+	
+
+/* ALERTAS */ 
+
+	.sucess{
+		padding: 10px;
 		text-transform: uppercase;
-		color: #FFBF2D;
-		font-weight: 500;
-		background: rgba(0,0,0,0.5);
-		margin-top: 20px;
-		padding: 5px;
+		font-size: 16px;
+		border: 1px solid #59A600;
+		border-radius: 4px;
+		color: #59A600;
+		background: #C6F88D;
 	}
+
+	.error{
+		padding: 10px;
+		text-transform: uppercase;
+		font-size: 16px;
+		border: 1px solid #FF2600;
+		border-radius: 4px;
+		color: #FF2600;
+		background: #FFA392;
+	}
+
+	.alert{
+		padding: 10px;
+		text-transform: uppercase;
+		font-size: 16px;
+		border: 1px solid #ECA911;
+		border-radius: 4px;
+		color: #ECA911;
+		background: #FFF5DF;
+	}
+
+
 
 
 

@@ -5,12 +5,12 @@
 	if(!empty($_POST['email']) && !empty($_POST['password']) && $_POST['email'] != "" && $_POST['password'] != "" ){
 		
 		if( login($_POST['email'], $_POST['password']) ){
-			header('Location: ../#/carreras.php');
+			echo "1";
 		}else{
-			header('Location: ../#/portada.php');
+			echo "0";
 		}
 	}else{
-		header('Location: ../#/portada.php');
+		echo "0";
 	}
 
 

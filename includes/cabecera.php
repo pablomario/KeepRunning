@@ -14,9 +14,9 @@
 	</div>
 
 	<div id="formularioLogin">
-		<form action="./lib/login.php" method="POST">
-			<input type="text" name="email" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
-			<input type="password" name="password" placeholder="*********">
+		<form method="POST" id="board_login">
+			<input id="board_login_user" type="text" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+			<input id="board_login_password" type="password" placeholder="*********">
 			<input type="submit" class="button azul" value="Iniciar Sesion">
 		</form>
 	</div>

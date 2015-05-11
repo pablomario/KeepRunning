@@ -2,19 +2,16 @@
 	require_once('./functions.php');
 	
 
-	if( !empty($_POST['nombre']) && !empty($_POST['password1']) && !empty($_POST['email1']) && !empty($_POST['sexo']) && !empty($_POST['nacimiento']) ){
-	 
+	if( !empty($_POST['nombre']) && !empty($_POST['password']) && !empty($_POST['email']) && !empty($_POST['sexo']) && !empty($_POST['nacimiento']) ){	 
 		$edad =  date("Y") - $_POST['nacimiento'];
-		$documento = array("nombre"=>$_POST['nombre'],"password"=>$_POST['password1'],"email"=>$_POST['email1'],"sexo"=>$_POST['sexo'],"edad"=>$edad);
-		insertarUsuario($documento);
-		mostrarDatos();
+		$documento = array("nombre"=>$_POST['nombre'],"password"=>$_POST['password'],"email"=>$_POST['email'],"sexo"=>$_POST['sexo'],"edad"=>$edad);
+		if(insertarUsuario($documento)){
+			echo '<h2 class="sucess"><i class="fa fa-check-circle"></i> Registrado correctamente, ya puede iniciar sesion</h2>';
+		}else{
+			echo '<h2 class="error"><i class="fa fa-times-circle"></i> Sucedió un error, es posible que el email ya este registrado</h2>';
+		}		
 	}else{
-		echo "<h1>MAL2</h1>";
-		echo $_POST['nombre'];
-		echo $_POST['password1'];
-		echo $_POST['email1'];
-		echo $_POST['sexo'];                        
-		echo $_POST['nacimiento'];
+		echo '<h2 class="alert"><i class="fa fa-exclamation-triangle"></i> Por favor revise los datos</h2>';
 	}
 
 

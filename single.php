@@ -75,7 +75,6 @@
 		<footer id="footer_single">		
 			<h2>Patrocinadores</h2>
 			<p class="carrousel">
-
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">
 				<img src="http://127.0.0.1/pmKeep/imgs/logo.png">
