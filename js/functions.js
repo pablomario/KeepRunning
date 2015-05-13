@@ -55,9 +55,7 @@ $(document).on("submit", "#board_newUser", function(){
 			$.ajax({
 				data:  parametros,
 				url:   './lib/nuevoUsuario.php',
-				type:  'post',
-				beforeSend: function () {
-				},
+				type:  'post',				
 				success:  function (response) {
 					$("#resultado").html(response);
 				}
@@ -65,6 +63,4 @@ $(document).on("submit", "#board_newUser", function(){
 		}
 
 });
-
-
 

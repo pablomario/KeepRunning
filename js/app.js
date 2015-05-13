@@ -145,12 +145,40 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
         $scope.carrera = response;  
     }); 
 
-    $scope.inscripcion = function(usuario , carrera){
-        alert("CARRERA:"+carrera+" USUARIO: "+usuario);
-    }
+    $scope.inscripcion = function(dataCarrera){
+     
+        $http.post('lib/inscripcion.php', {magic:'hello word!'}).
+        success(function(response) {           
+            alert("Felicidades, Tu dorsal es el numero: "+response);
+        }).
+        error(function() {
+            alert("Ocurrio un error, intentelo más tarde.");
+        });
 
+
+    };
+
+
+
+
+ 
 
 
 }]);
 
 
+
+    /*
+   // AJAX DESDE ANGULAR 
+    $scope.metodo = function(){
+        alert("caca");
+        $http.post('lib/prueba.php', {pepe:'caca'})
+        .success(function(responce) {           
+            alert("TODO BIEN");
+            alert(responce);
+        })
+        .error(function() {
+            alert("ERROR");
+        });
+    };
+    */
