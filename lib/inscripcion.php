@@ -1,8 +1,12 @@
 <?php
+	
+	$postdata = file_get_contents("php://input");
+	$request = json_decode($postdata);
+	$variable = $request->pepe;
 
-	$variable = json_decode($_POST['msg']);
-	echo $variable;
+	
 
+	echo $variable."caca";
 
 
 

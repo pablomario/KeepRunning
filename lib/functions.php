@@ -108,6 +108,44 @@
 	}
 
 
+
+	/**
+	 * [datosCarreraUnica description]
+	 * Obtener objeto json con los datos de cada carrera
+	 * @param  entero $identificador
+	 * @return json                
+	 */	
+	function datosCarreras(){ 
+		$mongo = conexion(); 
+		$coleccion = $mongo->carreras;		
+		//$fruitQuery = array("_id" => "551c5430d0d795443a42a2d8"); //Query
+		//$identificador = "551c5430d0d795443a42a2d8";
+		$item = $coleccion ->find();
+		$json = [];
+		$objeto = [];
+		foreach($item as $documento){
+			$objeto['id']             = $identificador;
+			$objeto['nombre']         = $documento['nombre'];
+			$objeto['edicion']        = $documento['edicion'];
+			$objeto['inscripcion']    = $documento['inscripcion'];
+			$objeto['fecha']          = $documento['fecha'];
+			$objeto['hora']           = $documento['hora'];
+			$objeto['descripcion']    = $documento['descripcion'];
+			$objeto['video']          = $documento['video'];
+			$objeto['localizacion']   = $documento['localizacion'];
+			$objeto['contactoEmail']  = $documento['contactoEmail'];
+			$objeto['contactoTelef']  = $documento['contactoTelef'];
+			$objeto['imagenCabecera'] = $documento['imagenCabecera'];
+			$objeto['imagenCartel']   = $documento['imagenCartel'];
+			$json[]                   = $objeto;
+		}
+		return $json;
+	}
+
+
+
+
+
 	/**
 	 * [datosCarreraUnica description]
 	 * Obtener objeto json con los datos de cada carrera

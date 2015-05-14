@@ -40,6 +40,10 @@ app.config(['$routeProvider', function($routeProvider)
     .when("/privacidad",{
         templateUrl : "./privacidad.php"
      })
+    .when("/tables",{
+        templateUrl : "./tables.php",
+        controller: "portada"
+     })
     .otherwise({ templateUrl : "./portada.php", controller: "portada" });
 }]);
 
@@ -87,6 +91,8 @@ app.controller('contacto', ['$scope', function($scope)
 }]);
 
 
+
+
 /**
  * Construccion del Menu
  *
@@ -99,7 +105,8 @@ app.factory('enlacesMenu', function(){
             {nombre:"Nuevo Usuario",     url: "nuevousuario",   icon:"fa fa-user-plus"},
             {nombre:"Organizadores",     url: "organizadores",  icon:"fa fa-cube"},
             {nombre:"Ayuda",             url: "ayuda",          icon:"fa fa-life-ring"},
-            {nombre:"Contacto",          url: "contacto",       icon:"fa fa-comments"}
+            {nombre:"Contacto",          url: "contacto",       icon:"fa fa-comments"},
+            {nombre:"Tables",            url: "tables",         icon:"fa fa-calendar"}
         ]
     };
 });
@@ -139,32 +146,36 @@ app.controller('proximasCarreras', ['$scope','$http', function($scope,$http){
  */
 app.controller('single', ['$scope','$http', '$routeParams', function($scope,$http,$routeParams){
      $scope.identificador = $routeParams.carreraId;
-     // La peticion la hago get ya que post no funciona correctamente
+     
      // obtenemos el id a traves de $routeParams.carreraId que esta en los RouteProviders
     $http.get('lib/ajaxSingle.php?id='+$routeParams.carreraId+' ').success(function(response){
         $scope.carrera = response;  
     }); 
 
     $scope.inscripcion = function(dataCarrera){
-     
-        $http.post('lib/inscripcion.php', {magic:'hello word!'}).
-        success(function(response) {           
-            alert("Felicidades, Tu dorsal es el numero: "+response);
-        }).
-        error(function() {
-            alert("Ocurrio un error, intentelo más tarde.");
+
+        alert("caca");
+        $http.post('lib/inscripcion.php', {pepe:dataCarrera})
+        .success(function(responce) {          
+            alert(responce);
+        })
+        .error(function() {
+            
         });
-
-
+    
     };
 
 
 
+}]);
 
- 
 
+app.controller('tables', ['$scope', function($scope)
+{
+    $scope.lugar= "tables";
 
 }]);
+
 
 
 
