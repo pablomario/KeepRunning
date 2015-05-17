@@ -5,10 +5,15 @@
 	$request = json_decode($postdata);
 	$carrera = $request->idCarrera;
 
-	inscripcionCarerra($carrera,$_SESSION['email']);
+	$resultado = inscripcion($carrera,$_SESSION['email']);
 	
+	if($resultado){
+		echo "1";
+	}else{
+		echo "0";
+	}
 
-	echo $carrera."caca";
+	
 
 
 

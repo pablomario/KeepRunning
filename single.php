@@ -24,9 +24,9 @@
 				if($_SESSION['authentication'] == 1){
 					
 					/* INSCRIPCION ABIERTA */
-					echo '<div ng-if="key.inscripcion == true" ng-init="dorsal = estaInscrito(key.id)" >';						
+					echo '<div ng-if="key.inscripcion == true" ng-init="estaInscrito(key.id)" >';						
 						/* USUARIO NO INSCRITO */
-						echo '<div ng-if="dorsal <= 0" >';
+						echo '<div ng-if="dorsal < 0" >';
 							echo '<a id="buttonLogin" class="button rosa big" ng-click=inscripcion(key.id)>Inscripción</a>';
 						echo '</div>';
 						/* USUARIO YA INSCRITO */

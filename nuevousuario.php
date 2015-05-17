@@ -15,11 +15,8 @@
 	<header id="header_single">
 		<div class="contenido_single">
 			<h1>Nuevo Usuario</h1> 
-		</div>
+		</div>		
 		
-		<aside class="lateral_single">
-			
-		</aside>
 	</header>
 	<article id="article_single"> 
 

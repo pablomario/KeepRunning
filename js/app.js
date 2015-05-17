@@ -91,6 +91,12 @@ app.controller('contacto', ['$scope', function($scope)
 }]);
 
 
+app.controller('tables', ['$scope', function($scope)
+{
+    $scope.lugar= "tables";
+
+}]);
+
 
 
 /**
@@ -160,22 +166,23 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
 
         $http.post('lib/estaInscrito.php', {idCarrera:dataCarrera})
         .success(function(responce) {          
-            resultado = parseInt(responce);
+            $scope.dorsal = responce;
         })
         .error(function() {
-            resultado = -999;  
+            $scope.dorsal = responce;  
         });
 
-        var caca = resultado;
-        return caca;
+        
     }
 
 
     $scope.inscripcion = function(dataCarrera){
-
+       
         $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
         .success(function(responce) {          
-            alert(responce);
+            
+            window.location="index.php#/single/"+dataCarrera ;
+           
         })
         .error(function() {
             
@@ -188,11 +195,7 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
 }]);
 
 
-app.controller('tables', ['$scope', function($scope)
-{
-    $scope.lugar= "tables";
 
-}]);
 
 
 

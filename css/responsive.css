@@ -1,0 +1,87 @@
+	
+
+
+
+
+
+
+
+
+
+	@media (max-width: 980px) {
+
+		.sucess, .error, .alert{		
+			font-size: 10px!important;			
+		}
+
+	
+
+
+		/* Cabecera */
+
+		header #headerleft{
+			width: 30%;
+		}
+
+		header #headercenter{
+			width: 50%;
+		}
+
+		header #headerright{
+			width: 20%;
+		}
+
+
+		/* Seccion Principal y Menu */
+
+		.seccion{
+			width: 90%!important;
+		}
+
+		#mainMenu{
+			width: 10%;
+		}
+
+		#mainMenu span{
+			display: none;
+		}
+
+		#mainMenu ul li a{
+			display: block;
+			padding-right: 0!important;
+			text-align: center!important;
+		}
+
+
+
+		/* Carteles */
+
+		section article.cartel{
+			width: 200px!important;
+			margin: 1em!important;			
+		}
+
+
+		/* Articulos */
+		#article_single{
+			width: 80%;
+		}
+
+		.contenido_single{
+			width: 95%;
+			float: left;
+		}
+
+		.lateral_single{
+			width: 95%;
+			float: left;
+			text-align: center;
+		}
+
+		.lateral_single img{
+			max-width: 250px;
+			height: auto;
+			
+		}
+
+	}

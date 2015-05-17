@@ -327,8 +327,6 @@
 	}
 
 
-
-
 /* SECTION CARRERAS*/ 
 
 	.seccion{
@@ -394,6 +392,7 @@
 
 	section article.cartel img{
 		display: block;
+		width: 100%;
 		margin: 0 auto;
 	}
 
