@@ -115,6 +115,7 @@
 	 * @param  entero $identificador
 	 * @return json                
 	 */	
+
 	function datosCarreras(){ 
 		$mongo = conexion(); 
 		$coleccion = $mongo->carreras;		
@@ -124,27 +125,26 @@
 		$json = [];
 		$objeto = [];
 		foreach($item as $documento){
-			$objeto['id']             = $identificador;
 			$objeto['nombre']         = $documento['nombre'];
 			$objeto['edicion']        = $documento['edicion'];
 			$objeto['inscripcion']    = $documento['inscripcion'];
 			$objeto['fecha']          = $documento['fecha'];
 			$objeto['hora']           = $documento['hora'];
 			$objeto['descripcion']    = $documento['descripcion'];
-			$objeto['video']          = $documento['video'];
-			$objeto['localizacion']   = $documento['localizacion'];
+			//$objeto['video']          = $documento['video'];
+			//$objeto['localizacion']   = $documento['localizacion'];
 			$objeto['contactoEmail']  = $documento['contactoEmail'];
 			$objeto['contactoTelef']  = $documento['contactoTelef'];
 			$objeto['imagenCabecera'] = $documento['imagenCabecera'];
 			$objeto['imagenCartel']   = $documento['imagenCartel'];
 			$json[]                   = $objeto;
 		}
-		return $json;
+		return json_encode($json);
 	}
 
 
-
-
+		 	
+	
 
 	/**
 	 * [datosCarreraUnica description]
@@ -178,6 +178,95 @@
 		}
 		return $json;
 	}
+
+
+
+	/*
+	===========================================================
+			    FUNCIONES PARA LA INSCRIPCION
+	===========================================================
+	*/
+
+
+	/**
+	 * [estaInscrito description]
+	 * Saber si un usuario ya esta inscrito, si es asi retorna el numero de dorsal.
+	 * @param  [type] $idCarrera [description]
+	 * @param  [type] $email     [description]
+	 * @return [type]            [description]
+	 */
+	function estaInscrito($idCarrera,$email){
+		$mongo = conexion();
+		$coleccion = $mongo->inscripciones;
+		$item = $coleccion ->find(array('carrera' => $idCarrera,'usuario' => $email));  
+		
+		foreach($item as $documento){		
+			$dorsal = $documento['dorsal'];				
+		}
+
+		if($dorsal == null){
+			// No esta inscrito 
+			return -1;
+		}else{
+			// Ya esta inscrito y tiene dorsal
+			return ($dorsal+0);
+		}		
+	}
+
+
+
+	/**
+	 * [maxDorsal description]
+	 * Funcion que regresa el dorsal que se asignara al sigueinte inscrito. 
+	 * @param  [type] $idCarrera [description]
+	 * @return [type]            [description]
+	 */
+	function maxDorsal($idCarrera){
+		$mongo = conexion();
+		$coleccion = $mongo->inscripciones;
+		$item = $coleccion ->find(array('carrera' => $idCarrera));  
+		$maxDorsal = 0;
+
+		foreach($item as $documento){		
+			$dorsal = $documento['dorsal'];
+			if($dorsal >= $maxDorsal ) $maxDorsal = $dorsal;
+		}	
+
+		if($maxDorsal==null){
+			$maxDorsal = 0;
+		}
+
+		return ($maxDorsal+1);
+	}
+
+
+	/**
+	 * [inscripcion description]
+	 * Funcion para inscribir un nuevo participante.
+	 * @param  [type] $idCarrera [description]
+	 * @param  [type] $usuario   [description]
+	 * @return [type]            [description]
+	 */
+	function inscripcion($idCarrera, $usuario){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->inscripciones;
+
+			/* Obtener Dorsal*/
+			$dorsalAsingado = maxDorsal($idCarrera);
+
+			/* Creacion objeto JSON de la incripscion */
+			$documento = array("usuario"=>$usuario,"carrera"=>$idCarrera,"dorsal"=>$dorsalAsingado);
+			$coleccion->insert($documento);
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+		
+	}
+
+
+
 
 
 

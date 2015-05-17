@@ -1,6 +1,6 @@
 
 <?php session_start(); ?>
-<section id="section_single" ng-controller="single" ng-repeat="key in carrera" ng-init="usuario = ' <?= $_SESSION['email']; ?>  ' ">
+<section id="section_single" ng-controller="single" ng-repeat="key in carrera" >
 
 <style type="text/css">
 	#cabecera_single{
@@ -22,12 +22,25 @@
 		<aside class="lateral_single">
 			<?php
 				if($_SESSION['authentication'] == 1){
-					echo '<div ng-if="key.inscripcion == true">';
-						echo '<a id="buttonLogin" class="button rosa big" ng-click=inscripcion(key.id)>Inscripción</a>';
+					
+					/* INSCRIPCION ABIERTA */
+					echo '<div ng-if="key.inscripcion == true" ng-init="dorsal = estaInscrito(key.id)" >';						
+						/* USUARIO NO INSCRITO */
+						echo '<div ng-if="dorsal <= 0" >';
+							echo '<a id="buttonLogin" class="button rosa big" ng-click=inscripcion(key.id)>Inscripción</a>';
+						echo '</div>';
+						/* USUARIO YA INSCRITO */
+						echo '<div ng-if="dorsal >= 0" >';
+							echo '<div class="dorsal">Dorsal<br><span>{{dorsal}}</span></div>';
+						echo '</div>';						
 					echo '</div>';
+
+
+					/* INSCRIPCION CERRADA */
 					echo '<div ng-if="key.inscripcion==false">';
 						echo '<a id="buttonLogin" class="button azul big">CERRADO</a>';
 					echo '</div>';
+
 				}else{
 					echo '<h2 class="alert"><i class="fa fa-exclamation-triangle"></i> Debes estar registrado para inscribirte</h2>';
 				}

@@ -152,10 +152,28 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
         $scope.carrera = response;  
     }); 
 
+    
+    // Ajax para saber si puede inscribirse el usuario si esta inscrito le saco su dorsal
+    $scope.estaInscrito = function(dataCarrera){  
+        
+        var resultado = -1;
+
+        $http.post('lib/estaInscrito.php', {idCarrera:dataCarrera})
+        .success(function(responce) {          
+            resultado = parseInt(responce);
+        })
+        .error(function() {
+            resultado = -999;  
+        });
+
+        var caca = resultado;
+        return caca;
+    }
+
+
     $scope.inscripcion = function(dataCarrera){
 
-        alert("caca");
-        $http.post('lib/inscripcion.php', {pepe:dataCarrera})
+        $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
         .success(function(responce) {          
             alert(responce);
         })

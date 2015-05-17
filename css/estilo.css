@@ -126,6 +126,41 @@
 	}
 
 
+/* ESTILO DORSAL */
+
+	.dorsal{
+		display:inline-block;
+		width: 80%;
+		height: auto;
+		font-size:1em;
+		text-align:center;
+		text-transform: uppercase;
+		text-decoration:none;
+		display: inline-block;		
+		color: #212121;
+		box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.5);		
+		line-height: 36px;
+		padding: 0px 20px;
+		font-weight: 500;
+		transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s;
+		background-color: #fff;
+		border-top: 6px solid red;
+		border-bottom: 6px solid red;
+	
+	}
+
+	.dorsal span{
+		display: block;
+		font-size: 3.2em;
+		padding: 10px 0px 20px 0px;
+		font-weight: bolder;
+	}
+
+
+
+
+
+
 /* HEADER */
 
 	header{
