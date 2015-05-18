@@ -98,8 +98,14 @@
 		padding: 20px;
 	}
 
+	.small{
+		font-size:0.8em;
+		display: inline-block;
+		padding: 0px 10px!important;
+	}
+
 	.azul{
-		background-color: #03A9F4!important;
+		background-color: #03A9F4;
 		cursor: pointer;
 	}
 
@@ -108,7 +114,7 @@
 	}
 
 	.rosa{
-		background-color: #D1005F!important;
+		background-color: #D1005F;
 		cursor: pointer;
 	}
 
@@ -117,12 +123,30 @@
 	}
 
 	.verde{
-		background-color: #8BC34A!important;
+		background-color: #8BC34A;
 		cursor: pointer;
 	}
 
 	.verde:hover{
 		background-color: #70AB2C;
+	}
+
+	.rojo{
+		background-color: #FF102A;
+		cursor: pointer;
+	}
+
+	.rojo:hover{
+		background-color: #C0061A;
+	}
+
+	.amarillo{
+		background-color: #ECA911;
+		cursor: pointer;
+	}
+
+	.amarillo:hover{
+		background-color: #DDC700;
 	}
 
 
@@ -177,41 +201,88 @@
 		width: 40%;
 	}
 
+		header img#logotipo{
+			display: inline-block;	
+			padding: 1em;
+			width: 350px;
+			height: auto;
+		}
+
+
 	header #headercenter{
 		width: 45%;
 	}
+
+		header input#buscador{
+			width: 50%;
+			padding: 10px 10px 10px 40px;
+			border: 1px solid #ADADAD;
+			border-radius: 5px;
+			background: url(../imgs/lupa.png) 5px 5px no-repeat;
+			transition: .3s;
+		}
+
+		header input#buscador:focus{
+			width: 65%;	
+			border: 1px solid ;	
+		}
+
+
 
 	header #headerright{
 		width: 15%;
 	}
 
-	header img#logotipo{
-		display: inline-block;	
-		padding: 1em;
-		width: 350px;
-		height: auto;
-	}
+		header #cabecera_usuario{
+			overflow: hidden;
+			padding: 10px 20px 10px 0px;
+		}
 
-	header input#buscador{
-		width: 50%;
-		padding: 10px 10px 10px 40px;
-		border: 1px solid #ADADAD;
-		border-radius: 5px;
-		background: url(../imgs/lupa.png) 5px 5px no-repeat;
-		transition: .3s;
-	}
+		header #cabecera_usuario .datos_personales{			
+			display: block;
+			height: 80px;
+			padding: 1px;
+			
+			
+		}
 
-	header input#buscador:focus{
-		width: 65%;	
-		border: 1px solid ;	
-	}
+		header #cabecera_usuario .datos_personales h1{
+			display: inline-block;
+			float: left;
+			margin-top: 20px;
+			max-width: 60%;
+			font-size: 20px;
+			text-transform: uppercase;
+		}
 
 
-	header img#avatar{
-		border-radius: 100%;
-		height: 80px;
-		width: auto;
-	}
+		header #cabecera_usuario .datos_personales img{
+			display: inline-block;
+			border-radius: 100%;
+			height: 100%;
+			width: auto;
+			float: right;
+
+		}
+		
+		header #cabecera_usuario .botonera{			
+			overflow: hidden;
+			width: 100%;
+			margin-top: 7px;
+			height: 40px!important;
+			text-align: justify;
+		}
+
+		header #cabecera_usuario .botonera a{ 
+			margin-left: 7px;
+		}
+	
+	
+
+	
+
+
+	
 
 	#formularioLogin{
 		background-color: #8BC34A;
@@ -232,6 +303,8 @@
 		border-radius: 5px;
 		padding: 10px;
 	}
+
+
 
 
 

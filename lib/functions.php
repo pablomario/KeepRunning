@@ -31,13 +31,17 @@
 				$storedUserName     = $documento['nombre'];
 				$storedUserEmail    = $documento['email'];
 				$storedUserPassword = $documento['password'];
+				$storedUserTipo     = $documento['tipo'];
+				$storeUserAvatar    = $documento['avatar'];
 			}
 
-			if($email == $storedUserEmail && $password == $storedUserPassword){ 
+			if($email == $storedUserEmail && md5($password) == $storedUserPassword){ 
 				session_start();
 					$_SESSION['authentication'] = 1;
-					$_SESSION['nombre'] = $storedUserName;
-					$_SESSION['email'] = $storedUserEmail;
+					$_SESSION['nombre']         = $storedUserName;
+					$_SESSION['email']          = $storedUserEmail;
+					$_SESSION['tipo']           = $storedUserTipo;
+					$_SESSION['avatar']         = $storeUserAvatar;  
 				return true;
 			}else{				
 				return false;
@@ -168,8 +172,8 @@
 			$objeto['fecha']          = $documento['fecha'];
 			$objeto['hora']           = $documento['hora'];
 			$objeto['descripcion']    = $documento['descripcion'];
-			$objeto['video']          = $documento['video'];
-			$objeto['localizacion']   = $documento['localizacion'];
+			//$objeto['video']          = $documento['video'];
+			//$objeto['localizacion']   = $documento['localizacion'];
 			$objeto['contactoEmail']  = $documento['contactoEmail'];
 			$objeto['contactoTelef']  = $documento['contactoTelef'];
 			$objeto['imagenCabecera'] = $documento['imagenCabecera'];

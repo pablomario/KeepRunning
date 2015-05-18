@@ -34,9 +34,12 @@
 				<label for="email2"> Repita Email: </label>
 				<input id="board_newUser_email1" type="email" ng-requried="true" name="email2" placeholder="alguien@ejemplo.com" required>
 				
-				<label for="sexo"> Sexo: </label>
-				<input name="sexo" value="Femenino" type="radio">Femenino<br/>
-				<input id="board_newUser_sexo" name="sexo" value="Masculino" type="radio">Masculino<br/>
+				<label for="sexo"> Sexo: </label>				
+				<select name="sexo" id="board_newUser_sexo">
+					<option value="Femenino">Femenino</option>
+					<option value="Masculino">Masculino</option>
+					<option value="Otro">Otro</option>
+				</select> <br/> <br/>
 
 				<label for="nacimiento">Año de Nacimiento</label>
 				<input id="board_newUser_nacimiento" type="number" ng-requried="true" name="nacimiento" patter="[0-9]{4,4}" value="1980" required>
