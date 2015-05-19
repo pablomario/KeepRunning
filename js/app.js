@@ -1,6 +1,5 @@
+
 var app = angular.module("app", ["ngRoute"]);
-
-
 
 
 /**
@@ -38,70 +37,80 @@ app.config(['$routeProvider', function($routeProvider)
         controller: "portada"
      })
     .when("/privacidad",{
-        templateUrl : "./privacidad.php"
+        templateUrl : "./privacidad.php",
+        controller: "privacidad"
      })
     .when("/tables",{
         templateUrl : "./tables.php",
         controller: "portada"
+     })    
+    .when("/dashboard",{
+        templateUrl : "./dashboard.php",
+        controller: "dashboard"
+     })
+    .when("/gestion",{
+        templateUrl : "./gestion.php",
+        controller: "gestion"
      })
     .otherwise({ templateUrl : "./portada.php", controller: "portada" });
 }]);
 
-/*
-app.controller('single', ['$scope', '$routeParams' , function($scope,$routeParams){
-    $scope.variable = "single";
-    $scope.identificador = $routeParams.identificador;
-}]); */
 
-app.controller('portada', ['$scope', function($scope)
-{
-    $scope.lugar = "Portada";
+/* Controllers Genericos */
 
-}]);
+    app.controller('portada', ['$scope', function($scope)
+    {
+        $scope.lugar = "Portada";
+
+    }]);
 
 
-app.controller('carreras', ['$scope', function($scope)
-{
-	$scope.lugar = "Proximas Carreras";
+    app.controller('carreras', ['$scope', function($scope)
+    {
+    	$scope.lugar = "Proximas Carreras";
 
-}]);
+    }]);
 
-app.controller('nuevousuario', ['$scope', function($scope)
-{
-	$scope.lugar = "Nuevo Usuario";
+    app.controller('nuevousuario', ['$scope', function($scope)
+    {
+    	$scope.lugar = "Nuevo Usuario";
 
-}]);
+    }]);
 
-app.controller('organziadores', ['$scope', function($scope)
-{
-	$scope.lugar = "Organizadores";
+    app.controller('organizadores', ['$scope', function($scope)
+    {
+    	$scope.lugar = "Organizadores";
 
-}])
+    }])
 
-app.controller('ayuda', ['$scope', function($scope)
-{
-    $scope.lugar = "Ayuda";
+    app.controller('ayuda', ['$scope', function($scope)
+    {
+        $scope.lugar = "Ayuda";
 
-}]);
+    }]);
 
-app.controller('contacto', ['$scope', function($scope)
-{
-    $scope.lugar= "Contacto";
+    app.controller('contacto', ['$scope', function($scope)
+    {
+        $scope.lugar= "Contacto";
 
-}]);
+    }]);
+
+    app.controller('privacidad', ['$scope', function($scope)
+    {
+        $scope.lugar= "Politica de privacidad y aviso legal";
+
+    }]);
 
 
-app.controller('tables', ['$scope', function($scope)
-{
-    $scope.lugar= "tables";
+    app.controller('tables', ['$scope', function($scope)
+    {
+        $scope.lugar= "tables";
 
-}]);
-
+    }]);
 
 
 /**
  * Construccion del Menu
- *
  */
 app.factory('enlacesMenu', function(){
     return{
@@ -123,8 +132,6 @@ app.controller('enlacesmenu', ['$scope', 'enlacesMenu', function($scope,enlacesM
 
 
 
-
-/* [FUNCIONES AJAX]  */
 
 /**
  * Controller proximasCarreras
@@ -151,6 +158,7 @@ app.controller('proximasCarreras', ['$scope','$http', function($scope,$http){
  * @return {[type]}                 [description]
  */
 app.controller('single', ['$scope','$http', '$routeParams', function($scope,$http,$routeParams){
+    // ID de la carrera
      $scope.identificador = $routeParams.carreraId;
      
      // obtenemos el id a traves de $routeParams.carreraId que esta en los RouteProviders
@@ -160,38 +168,47 @@ app.controller('single', ['$scope','$http', '$routeParams', function($scope,$htt
 
     
     // Ajax para saber si puede inscribirse el usuario si esta inscrito le saco su dorsal
-    $scope.estaInscrito = function(dataCarrera){  
-        
+    $scope.estaInscrito = function(dataCarrera){          
         var resultado = -1;
-
         $http.post('lib/estaInscrito.php', {idCarrera:dataCarrera})
-        .success(function(responce) {          
-            $scope.dorsal = responce;
-        })
-        .error(function() {
-            $scope.dorsal = responce;  
-        });
-
-        
-    }
-
-
-    $scope.inscripcion = function(dataCarrera){
-       
-        $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
-        .success(function(responce) {          
-            
-            window.location="index.php#/single/"+dataCarrera ;
-           
-        })
-        .error(function() {
-            
-        });
-    
+            .success(function(responce) {          
+                $scope.dorsal = responce;
+            })
+            .error(function() {
+                $scope.dorsal = responce;  
+            });       
     };
 
 
+    $scope.inscripcion = function(dataCarrera){       
+        $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
+        .success(function(responce) {           
+            window.location="index.php#/single/"+dataCarrera;           
+        })
+        .error(function() {
+            alert("Ocurrió un error, intentelo más tarde");
+        });    
+    };
 
+
+}]);
+
+app.controller('dashboard', ['$scope','$http', function($scope,$http){
+
+    $scope.lugar = "Dashboard";
+
+    $scope.prueba = function(){
+        alert("Prueba de Dashboard");
+    }    
+}]);
+
+app.controller('gestion', ['$scope','$http', function($scope,$http){
+
+    $scope.lugar = "Gestión";
+
+    $scope.prueba = function(){
+        alert("Prueba de Gestión");
+    }    
 }]);
 
 

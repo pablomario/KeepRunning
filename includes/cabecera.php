@@ -1,6 +1,6 @@
 <header>
 	<!-- Logotipo y cosas de el usuario -->
-	<div id="headerleft"> <img id="logotipo" src="./imgs/KeepRunning.svg" style="height:70px; width: auto"> </div> 
+	<div id="headerleft"> <img id="logotipo" src="./imgs/KeepRunning.png" style="height:100px; width: auto"> </div> 
 	<div id="headercenter"> <input id="buscador" type="search"> </div>
 	<div id="headerright">
 		<?php
@@ -10,11 +10,12 @@
 				echo '<div class="datos_personales botonera">';
 
 					if($_SESSION['tipo']==0){
-						echo '<a class="button azul small" href="#">Mi Perfil</a> ';
+						echo '<a class="button azul small" href="index.php#/dashboard">Mi Perfil</a> ';
 					}else if($_SESSION['tipo']==1){
-						echo '<a class="button verde small" href="#">Gesti&oacute;n</a>';
+						echo '<a class="button azul small" href="index.php#/dashboard">Mi Perfil</a>'; 
+						echo '<a class="button verde small" href="index.php#/gestion">Gesti&oacute;n</a>';
 					}else if($_SESSION['tipo']==7){
-						echo '<a class="button amarillo small" href="#">Administraci&oacute;n</a>';
+						echo '<a class="button amarillo small" href="index.php#/administracion">Administraci&oacute;n</a>';
 					}
 					echo '<a class="button rojo small" href="./lib/logout.php">Salir</a></div>';
 				echo '</div>';

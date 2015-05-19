@@ -1,23 +1,26 @@
 
 
-<section id="section_single">
+<section id="section_single" ng-controller="nuevousuario"> 
 
 <style type="text/css">
 	#cabecera_single{
 		background: url(./imgs/portada/learner.jpg) center center;
 		background-size: cover;
+		height: 200px;
 	}
 
 </style>
 
 	<!-- en formato cartel poner todas las carreras disponibles -->
 	<div id="cabecera_single"></div>
+
 	<header id="header_single">
 		<div class="contenido_single">
-			<h1>Nuevo Usuario</h1> 
+			<h1>{{lugar}}</h1> 
 		</div>		
-		
+		<aside class="lateral_single"></aside>
 	</header>
+
 	<article id="article_single"> 
 
 		<div class="contenido_single">

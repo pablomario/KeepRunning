@@ -33,6 +33,8 @@
 				$storedUserPassword = $documento['password'];
 				$storedUserTipo     = $documento['tipo'];
 				$storeUserAvatar    = $documento['avatar'];
+				$storeUserSexo      = $documento['sexo'];
+				$storeUserEdad      = $documento['edad'];
 			}
 
 			if($email == $storedUserEmail && md5($password) == $storedUserPassword){ 
@@ -41,7 +43,9 @@
 					$_SESSION['nombre']         = $storedUserName;
 					$_SESSION['email']          = $storedUserEmail;
 					$_SESSION['tipo']           = $storedUserTipo;
-					$_SESSION['avatar']         = $storeUserAvatar;  
+					$_SESSION['avatar']         = $storeUserAvatar;
+					$_SESSION['sexo']           = $storeUserSexo; 
+					$_SESSION['edad']           = $storeUserEdad;  
 				return true;
 			}else{				
 				return false;

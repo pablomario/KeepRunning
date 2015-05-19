@@ -17,6 +17,12 @@
 		list-style: none!important;
 	}
 
+	.lista_con_estilo li{
+		padding: 3px 0px 3px 30px;
+		list-style: circle inside!important;
+	}
+
+
 
 /* Componentes */ 
 
@@ -80,12 +86,13 @@
 		text-decoration:none;
 		display: inline-block;		
 		color: #FFF;
-		box-shadow: 1px 0px 4px rgba(0, 0, 0, 0.5);
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 		border-radius: 2px;
 		line-height: 36px;
 		padding: 0px 20px;
 		font-weight: 500;
 		transition: box-shadow 0.2s ease-out 0s, background-color 0.2s ease-out 0s;
+		cursor: pointer;
 	}
 
 	.button:hover{
@@ -106,48 +113,38 @@
 
 	.azul{
 		background-color: #03A9F4;
-		cursor: pointer;
 	}
-
-	.azul:hover{
-		background-color: #0288D1;
-	}
+		.azul:hover{
+			background-color: #59CCFF;
+		}
 
 	.rosa{
 		background-color: #D1005F;
-		cursor: pointer;
 	}
-
-	.rosa:hover{
-		background-color: #A41E5B;
-	}
+		.rosa:hover{
+			background-color: #A41E5B;
+		}
 
 	.verde{
-		background-color: #8BC34A;
-		cursor: pointer;
+		background-color: #A3B12C;
 	}
-
-	.verde:hover{
-		background-color: #70AB2C;
-	}
+		.verde:hover{
+			background-color: #D3E34D;
+		}
 
 	.rojo{
-		background-color: #FF102A;
-		cursor: pointer;
+		background-color: #FE102A;
 	}
-
-	.rojo:hover{
-		background-color: #C0061A;
-	}
+		.rojo:hover{
+			background-color: #FF6D7E;
+		}
 
 	.amarillo{
 		background-color: #ECA911;
-		cursor: pointer;
 	}
-
-	.amarillo:hover{
-		background-color: #DDC700;
-	}
+		.amarillo:hover{
+			background-color: #DDC700;
+		}
 
 
 /* ESTILO DORSAL */
@@ -277,32 +274,38 @@
 			margin-left: 7px;
 		}
 	
-	
+		
 
-	
-
-
-	
-
-	#formularioLogin{
-		background-color: #8BC34A;
+	header #formularioLogin{
+		background-color: #A3B12C;
 		display: none;
 		width: 100%;
 	}
 
-	#formularioLogin form{
-		margin: 0 auto;
-		width: 80%;
-		padding: 1em;
-		text-align: center;
-	}
+		header #formularioLogin form{
+			margin: 0 auto;
+			width: 80%;
+			padding: 1em;
+			text-align: center;
+		}
+
+		header #formularioLogin label{		
+			padding-left: 1.2em;
+			padding-right: 0.2em;
+		}
 
 
-	#formularioLogin form input[type="text"], input[type="password"]{
-		width: 20%;
-		border-radius: 5px;
-		padding: 10px;
-	}
+		header #formularioLogin form input[type="text"], input[type="password"]{
+			width: 20%;
+			padding: 10px;
+			border: none!important;
+		}
+
+		header #formularioLogin form input[type="submit"]{
+			width: 10%;
+			border: none;
+			margin: -20px 0px 0px 10px;
+		}
 
 
 
@@ -330,7 +333,7 @@
 
 	nav .navActual{
 		display: inline-block;
-		background: #9bbe45;
+		background: #FE102A;
 		width: auto;
 	}
 
@@ -373,31 +376,33 @@
 		background-color: #2e343d;
 	}
 
-	aside ul li{
-		list-style: none;
-	}
+		aside ul li{
+			list-style: none;
+		}
 
-	aside ul li a{
-		display: block;
-		text-align: left;
-		color: #99B9C2;
-		text-decoration: none;
-		padding: 1em 1em 1em 1.1em;
-	}
+			aside ul li .active{
+				color: #ffffff;
+			}
 
-	aside ul li a i{
-		padding-right: 1em;
-	}
+			aside ul li a{
+				display: block;
+				text-align: left;
+				color: #99B9C2;
+				text-decoration: none;
+				padding: 1em 1em 1em 1.1em;
+			}
+
+				aside ul li a i{
+					padding-right: 1em;
+				}
 
 
-	aside ul li a:hover{
-		color: #9bbe45;
-		background-color: #2a3038;
-	}
+				aside ul li a:hover{
+					color: #A3B12C;
+					background-color: #2a3038;
+				}
 
-	aside ul li .active{
-		color: #ffffff;
-	}
+			
 
 
 /* SECTION CARRERAS*/ 
@@ -415,23 +420,21 @@
 		align-items: -webkit-stretch;	
 	}
 
-	section article{
-		/* Esto lo meto con FLEX */
-		padding: 1em;
-		margin: 1em;
-		width: 100%;
-		/* width: 90%; /* Ancho para los articulos flex */
-	}
+		section article{
+			padding: 1em;
+			margin: 1em;
+			width: 100%;
+		}
 
-	section h1{
-		font-weight: 300;
-		font-size: 4em;
-	}
+		section h1{
+			font-weight: 300;
+			font-size: 4em;
+		}
 
-	section h2{
-		font-weight: 300;
-		font-size: 2em;
-	}
+		section h2{
+			font-weight: 300;
+			font-size: 2em;
+		}
 
 
 
@@ -538,6 +541,13 @@
 		padding-right: 1em;
 	}
 
+		.contenido_single em{
+			font-weight: 500;
+			text-transform: uppercase;
+			font-style: normal;
+			padding-right: 10px;
+		}
+
 	.lateral_single{
 		width: 20%;
 		min-height: 7em;
@@ -632,7 +642,11 @@
 		margin: 20px auto;
 	}
 
+/* DASHBOARD */
 
+#dashboard{
+	justify-content: center!important;
+}
 
 
 
@@ -641,20 +655,21 @@
 	.menujq{
 		margin-bottom: 2em;
 	}
-	.menujq ul {
-		list-style: none;
-		width: 100%;
-	}
-	.menujq h3 {
-		padding: 0.3em;
-		font-weight: 300;
-		background-color: #465866;
-		border-bottom: 2px solid #3FC6F3;
-		color: #fff;
-	}
-	.menujq h3:hover{
-		cursor: pointer;
-	}
+		.menujq ul {
+			list-style: none;
+			width: 100%;
+		}
+
+		.menujq h3 {
+			padding: 0.3em;
+			font-weight: 300;
+			background-color: #465866;
+			border-bottom: 2px solid #3FC6F3;
+			color: #fff;
+		}
+		.menujq h3:hover{
+			cursor: pointer;
+		}
 
 
 	/* Símbolo elemento normal */
@@ -673,24 +688,23 @@
 	.menujq ul ul {
 		display: none;
 		width: 100%;
-	}
-	/* Sangrado y segundo color para sub-opciones */
-	.menujq ul ul li {
-		padding: 20px;
-		background: #F0F4C3;
-		text-transform: capitalize;
-	}
+	}	
+		
+		.menujq ul ul li {
+			padding: 20px;
+			background: #F0F4C3;
+		}
 
-	.menujq ul ul li p{
-		width: 90%;
-	}
+			.menujq ul ul li p{
+				width: 90%;
+			}
 
-	.menujq ul ul li img{
-		max-width: 500px;
-		height: auto;
-		margin: 0 auto;
-		display: block;
-	}
+			.menujq ul ul li img{
+				max-width: 500px;
+				height: auto;
+				margin: 0 auto;
+				display: block;
+			}
 
 
 

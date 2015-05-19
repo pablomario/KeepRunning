@@ -5,26 +5,26 @@
 
 <style type="text/css">
 	#cabecera_single{
-		background: url(./imgs/portada/otr.png) center center;
+		background: url(./imgs/portada/learner.jpg) center center;
 		background-size: cover;
+		height: 200px;
 	}
 
 </style>
 
 	<!-- en formato cartel poner todas las carreras disponibles -->
 	<div id="cabecera_single"></div>
+
 	<header id="header_single">
 		<div class="contenido_single">
-			<h1>Política de privacidad y aviso legal</h1> 
-		</div>
-		
-		<aside class="lateral_single">
-			
-		</aside>
+			<h1>{{lugar}}</h1> 
+		</div>		
+		<aside class="lateral_single"></aside>
 	</header>
+	
 	<article id="article_single"> 
 		<div class="contenido_single">
-			<h2>Política de privacidad:</h2>
+			<h2>Poltica de privacidad:</h2>
 			<p>
 
 A través de este sitio web no se recaban datos de carácter personal de los usuarios sin su conocimiento, ni se ceden a terceros.
