@@ -14,8 +14,6 @@
 			font-size: 10px!important;			
 		}
 
-	
-
 
 		/* Cabecera */
 
@@ -29,6 +27,14 @@
 
 		header #headerright{
 			width: 20%;
+		}
+
+		header #cabecera_datos_usuario{
+			display: none!important;
+		}
+
+		header .botonera a{
+			display: block;
 		}
 
 

@@ -6,7 +6,7 @@
 		<?php
 			if($_SESSION['authentication'] == 1){
 				echo '<div id="cabecera_usuario">';
-				echo '<div class="datos_personales"><h1> '.$_SESSION['nombre'].'</h1> <img id="avatar" src="'.$_SESSION['avatar'].'"></div>';
+				echo '<div id="cabecera_datos_usuario" class="datos_personales"><h1> '.$_SESSION['nombre'].'</h1> <img id="avatar" src="'.$_SESSION['avatar'].'"></div>';
 				echo '<div class="datos_personales botonera">';
 
 					if($_SESSION['tipo']==0){

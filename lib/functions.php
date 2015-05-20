@@ -274,6 +274,51 @@
 	}
 
 
+	/*
+	===========================================================
+			    FUNCIONES PARA DASHBOARD USUARIO
+	===========================================================
+	*/
+
+	/**
+	 * [inscripcionDashboard description]
+	 * Funcion para obtener un listado de las carreras en las que participa
+	 * un usuario.
+	 * @param  [type] $usuario [description]
+	 * @return [type]          [description]
+	 */
+	function inscripcionDashboard($usuario){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->inscripciones;	
+			$coleccionRace = $mongo->carreras;				
+
+			$json = [];
+			$objeto = [];
+
+			$item = $coleccion->find(array("usuario"=>$usuario));
+			foreach($item as $documento){
+				$identificador     = $documento['carrera'];
+				$objeto['carrera'] = $documento['carrera'];
+				$objeto['dorsal']  = $documento['dorsal'];			
+
+				$itemRace = $coleccionRace ->find(array('_id' => new MongoId($identificador)));				
+				foreach($itemRace as $documentoRace){
+					$objeto['carreraNombre']  = $documentoRace['nombre'];
+					$objeto['carreraEdicion'] = $documentoRace['edicion'];
+					$objeto['carreraFecha']   = $documentoRace['fecha'];
+				}
+				$json[] = $objeto;
+			}/* Fin first foreach */
+
+			return $json;
+
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+
 
 
 

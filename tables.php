@@ -13,7 +13,7 @@
 
 		$(document).ready(function() {
 		    $('#example').dataTable( {
-		        "ajax": 'lib/tables.php'		        
+		        "ajax": 'lib/inscripcionDashboard.php'		        
 		    } );
 
 		} );		
