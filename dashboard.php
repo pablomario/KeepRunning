@@ -83,7 +83,7 @@
 			<h2>Selección Avatar</h2>
 				<form class="seleccion_avatar" action="demo_form.asp">
 					<div class="seleccion_avatar_ajuste">
-						<div class="cuadro"><img src="./imgs/avatares/boy1.png"><input type="checkbox" name="vehicle" value="boy1"></div>
+						<div class="cuadro"><img src="./imgs/avatares/boy1.png"><br/><input type="checkbox" name="vehicle" value="boy1"></div>
 						<div class="cuadro"><img src="./imgs/avatares/boy2.png"><br/><input type="checkbox" name="vehicle" value="boy2"></div>
 						<div class="cuadro"><img src="./imgs/avatares/girl1.png"><br><input type="checkbox" name="vehicle" value="girl1"></div>
 						<div class="cuadro"><img src="./imgs/avatares/girl2.png"><br><input type="checkbox" name="vehicle" value="girl2"></div>

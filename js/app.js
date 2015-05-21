@@ -175,8 +175,8 @@ app.config(['$routeProvider', function($routeProvider)
 
         $scope.inscripcion = function(dataCarrera){       
             $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
-            .success(function(responce) {           
-                window.location="index.php#/single/"+dataCarrera;           
+            .success(function(responce) {              
+               location.href ="index.php#/dashboard";           
             })
             .error(function() {
                 alert("Ocurrió un error, intentelo más tarde");
@@ -192,17 +192,16 @@ app.config(['$routeProvider', function($routeProvider)
         $http.get('lib/inscripcionDashboard.php').success(function(response){
             $scope.carreras = response;  
         }); 
-        $scope.prueba = function(){
-            alert("Prueba de Dashboard");
-        }  
+         
     }]);
 
 
     app.controller('gestion', ['$scope','$http', function($scope,$http){
-        $scope.lugar = "Gestión";
-        $scope.prueba = function(){
-            alert("Prueba de Gestión");
-        }    
+        $scope.lugar = "Gestion";
+        $http.get('lib/carrerasOrganizadas.php').success(function(response){
+            $scope.carreras = response;  
+        }); 
+          
     }]);
 
 

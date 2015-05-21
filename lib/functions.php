@@ -1,5 +1,13 @@
 <?php
 
+
+	/*
+	===========================================================
+			    FUNCIONES PARA CONEXION MONGODB
+	===========================================================
+	*/
+
+
 	/**
 	 * [conexion description]
 	 * Conexion a base de datos MongoDB
@@ -12,7 +20,13 @@
 	}
 
 
-	/************************** LOGIN *************************/
+
+
+	/*
+	===========================================================
+			    FUNCIONES PARA LOGIN & USUARIO BASICA
+	===========================================================
+	*/
 
 	/**
 	 * [login description]
@@ -56,8 +70,6 @@
 	}
 
 
-
-
 	/**
 	 * [insertarUsuario description]
 	 * Guardar Usuario en MongoDB
@@ -76,23 +88,14 @@
 	}
 
 
-	/**
-	 * [mostrarDatos description]
-	 * [TEST]
-	 * @return [type] [description]
-	 */
-	function mostrarDatos(){
-		$mongo = conexion(); //Recibo la conexion
-		$coleccion = $mongo->usuarios; //Establezco con que tabla quiero trabajar
-		$cursor = $coleccion->find();
-		foreach($cursor as $documento){
-			echo "ID Usuario: " .$documento["_id"]." Nombre: ". $documento["nombre"]." <br>";
-		}
-	}
 
 
+	/*
+	===========================================================
+			    FUNCIONES PARA PROXIMASCARRERAS & SINGLE
+	===========================================================
+	*/
 
-	/** [ FUNCIONES PARA PROXIMAS CARERAS y SINGLE ] **/
 
 	/**
 	 * [proximasCarreras description]
@@ -114,7 +117,6 @@
 		}
 		return $json;
 	}
-
 
 
 	/**
@@ -151,9 +153,6 @@
 	}
 
 
-		 	
-	
-
 	/**
 	 * [datosCarreraUnica description]
 	 * Obtener objeto json con los datos de cada carrera
@@ -189,6 +188,7 @@
 
 
 
+
 	/*
 	===========================================================
 			    FUNCIONES PARA LA INSCRIPCION
@@ -220,7 +220,6 @@
 			return ($dorsal+0);
 		}		
 	}
-
 
 
 	/**
@@ -274,6 +273,8 @@
 	}
 
 
+
+
 	/*
 	===========================================================
 			    FUNCIONES PARA DASHBOARD USUARIO
@@ -320,6 +321,44 @@
 
 
 
+
+	/*
+	===========================================================
+			    FUNCIONES PARA GESTION ORGANIZADOR
+	===========================================================
+	*/
+
+
+	/**
+	 * [carrerasOrganizadas description]
+	 * Obtiene a partir de un email las carreras que ha organizado
+	 * dicho usuario.
+	 * @param  [type] $usuario [description]
+	 * @return [type]          [description]
+	 */
+	function carrerasOrganizadas($usuario){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->carreras;
+			$item = $coleccion ->find(array('creador' => $usuario)); 				
+
+			$json = [];
+			$objeto = [];
+			foreach($item as $documento){
+				$objeto['carreraId']      = (string)$documento['_id']; 
+				$objeto['carreraNombre']  = $documento['nombre'];
+				$objeto['carreraEdicion'] = $documento['edicion'];				
+				$objeto['carreraFecha']   = $documento['fecha'];							
+				$objeto['carreraEmail']   = $documento['contactoEmail'];
+				$objeto['carreraTelef']   = $documento['contactoTelef'];
+				$objeto['carreraCartel']  = $documento['imagenCartel'];
+				$json[]                   = $objeto;
+			}
+			return $json;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
 
 
 
