@@ -320,6 +320,19 @@
 	}
 
 
+	function cambioAvatar($usuario,$nuevoAvatar){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios;			
+			$coleccion->update( array('email' => $usuario) , array('$set'=> array('avatar' => $nuevoAvatar)) );							
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+
+
 
 
 	/*
@@ -345,7 +358,8 @@
 			$json = [];
 			$objeto = [];
 			foreach($item as $documento){
-				$objeto['carreraId']      = (string)$documento['_id']; 
+				$objeto['carreraId']      = (string)$documento['_id'];
+				$objeto['inscripcion']    = $documento['inscripcion']; 
 				$objeto['carreraNombre']  = $documento['nombre'];
 				$objeto['carreraEdicion'] = $documento['edicion'];				
 				$objeto['carreraFecha']   = $documento['fecha'];							
@@ -358,8 +372,143 @@
 		}catch(MongoCursorException $e){
 			return false;
 		}
+	}	
+
+
+	/**
+	 * [cambioEstadoCarrera description]
+	 * Cambio el estado de una carrera.
+	 * @param  [type] $operacion [description]
+	 * @param  [type] $carrera   [description]
+	 * @return [type]            [description]
+	 */
+	function cambioEstadoCarrera($operacion,$carrera){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->carreras;
+			if($operacion==0){
+				$coleccion->update( array('_id' => new MongoId($carrera)) , array('$set'=> array("inscripcion" => false)));	
+			}else if($operacion==1){
+				$coleccion->update( array('_id' => new MongoId($carrera)) , array('$set'=> array("inscripcion" => true)));	
+			}				
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
 	}
 
+
+
+
+	/*
+	===========================================================
+			    FUNCIONES PARA ADMINISTRACION
+	===========================================================
+	*/
+
+
+	/**
+	 * [carrerasOrganizadas description]
+	 * Obtiene a partir de un email las carreras que ha organizado
+	 * dicho usuario.
+	 * @param  [type] $usuario [description]
+	 * @return [type]          [description]
+	 */
+	function carrerasOrganizadasAdmin(){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->carreras;
+			$item = $coleccion ->find(); 				
+
+			$json = [];
+			$objeto = [];
+			foreach($item as $documento){
+				$objeto['carreraId']      = (string)$documento['_id'];
+				$objeto['inscripcion']    = $documento['inscripcion']; 
+				$objeto['carreraNombre']  = $documento['nombre'];
+				$objeto['carreraEdicion'] = $documento['edicion'];				
+				$objeto['carreraFecha']   = $documento['fecha'];							
+				$objeto['carreraEmail']   = $documento['contactoEmail'];
+				$objeto['carreraTelef']   = $documento['contactoTelef'];
+				$objeto['carreraCartel']  = $documento['imagenCartel'];
+				$json[]                   = $objeto;
+			}
+			return $json;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}	
+
+	/**
+	 * [listadoUsuariosAdmin description]
+	 * Obtener un listado completo de los usuarios registrados
+	 * a excepción de los Administradores.
+	 * @return [type] [description]
+	 */
+	function listadoUsuariosAdmin(){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios;
+			$item = $coleccion ->find(); 				
+
+			$json = [];
+			$objeto = [];
+			foreach($item as $documento){				
+				$objeto['usuarioNombre'] = $documento['nombre']; 
+				$objeto['usuarioEmail']  = $documento['email'];
+				$objeto['usuarioSexo']   = $documento['sexo'];				
+				$objeto['usuarioEdad']   = $documento['edad'];							
+				$objeto['usuarioTipo']   = $documento['tipo'];
+				$objeto['usuarioAvatar'] = $documento['avatar'];
+				if($documento['tipo']!=7){
+					$json[] = $objeto;
+				}				
+			}
+			return $json;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+	/**
+	 * [promocionUsuarioAdmin description]
+	 * Promocionar o degradar usuario para darle permisos de Organizador.
+	 * @param  [type] $operacion [description]
+	 * @param  [type] $usuario   [description]
+	 * @return [type]            [description]
+	 */
+	function promocionUsuarioAdmin($operacion, $usuario){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios;
+			if($operacion==1){
+				$coleccion->update( array('email' => $usuario) , array('$set'=> array('tipo' => '1')) );	
+			}else if($operacion==0){
+				$coleccion->update( array('email' => $usuario) , array('$set'=> array('tipo' => '0')) );
+			}			
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+
+	/**
+	 * [eliminarUsuario description]
+	 * Eliminar Usuario del sistema.
+	 * @param  [type] $usuario [description]
+	 * @return [type]          [description]
+	 */
+	function eliminarUsuario($usuario){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->usuarios;
+			$coleccion->remove(array('email'=>$usuario));			
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
 
 
 

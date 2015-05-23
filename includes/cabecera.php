@@ -1,11 +1,17 @@
 <header>
 	<!-- Logotipo y cosas de el usuario -->
-	<div id="headerleft"> <img id="logotipo" src="./imgs/KeepRunning.png" style="height:100px; width: auto"> </div> 
-	<div id="headercenter"> <input id="buscador" type="search"> </div>
+	<div id="headerleft"> 
+		<div class="izquierda">
+			<img id="logotipo" src="./imgs/KeepRunning.png"> 
+		</div>		
+	</div> 
+
 	<div id="headerright">
+		<div class="derecha ajuste_derecha">
 		<?php
 			if($_SESSION['authentication'] == 1){
 				echo '<div id="cabecera_usuario">';
+				
 				echo '<div id="cabecera_datos_usuario" class="datos_personales"><h1> '.$_SESSION['nombre'].'</h1> <img id="avatar" src="'.$_SESSION['avatar'].'"></div>';
 				echo '<div class="datos_personales botonera">';
 
@@ -15,7 +21,6 @@
 						echo '<a class="button azul small" href="index.php#/dashboard">Mi Perfil</a>'; 
 						echo '<a class="button verde small" href="index.php#/gestion">Gesti&oacute;n</a>';
 					}else if($_SESSION['tipo']==7){
-						echo '<a class="button verde small" href="index.php#/gestion">Gesti&oacute;n</a>';
 						echo '<a class="button amarillo small" href="index.php#/administracion">Administraci&oacute;n</a>';
 					}
 					echo '<a class="button rojo small" href="./lib/logout.php">Salir</a></div>';
@@ -23,7 +28,8 @@
 			}else{
 				echo '<a id="buttonLogin" class="button azul">Iniciar Sesion</a>';				
 			}
-		?>		
+		?>	
+		</div>	
 	</div>
 
 	<div id="formularioLogin">
@@ -36,5 +42,6 @@
 		</form>
 	</div>
 
+	
 	
 </header>

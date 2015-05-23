@@ -38,6 +38,10 @@
 		float: right;
 	}
 
+	.ajuste_derecha{
+		margin-right: 30px;
+	}
+
 /* Justificacion texto */
 
 	.ajustado_left{
@@ -219,39 +223,24 @@
 	}
 
 	header #headerleft{
-		width: 40%;
+		width: 50%;
 	}
 
 		header img#logotipo{
 			display: inline-block;	
 			padding: 1em;
-			width: 350px;
-			height: auto;
+			height:100px; 
+			width: auto;
 		}
 
 
-	header #headercenter{
-		width: 45%;
-	}
 
-		header input#buscador{
-			width: 50%;
-			padding: 10px 10px 10px 40px;
-			border: 1px solid #ADADAD;
-			border-radius: 5px;
-			background: url(../imgs/lupa.png) 5px 5px no-repeat;
-			transition: .3s;
-		}
 
-		header input#buscador:focus{
-			width: 65%;	
-			border: 1px solid ;	
-		}
 
 
 
 	header #headerright{
-		width: 15%;
+		width: 50%;
 	}
 
 		header #cabecera_usuario{
@@ -689,20 +678,28 @@
 				margin-left: 25px;
 			}
 
-			#dashboard .seleccion_avatar .cuadro{
+			.seleccion_avatar_ajuste{
+				width: 210px;
+			}
+
+			#dashboard .cuadro{
 				width: 80px;
 				display: inline-block;
 				text-align: center;
+				margin: 10px;
 			}
 
-				#dashboard .seleccion_avatar .cuadro input[type='checkbox']{
-					margin: 7px 0px 14px 0px;
-				}
+			#dashboard .cuadro img{
+				cursor: pointer;
+				border: 3px solid white;	
+			}
 
-				#dashboard .seleccion_avatar .cuadro img{
-					width: 80px;
-					height: 80px;
-				}
+			#dashboard .cuadro img:hover{
+				cursor: pointer;
+				border: 3px solid blue;				
+			}
+
+			
 
 
 

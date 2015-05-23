@@ -4,6 +4,13 @@
 	if($_SESSION['authentication'] == 0){
 		header('Location: #/index.php');
 	}
+	if($_SESSION['tipo']==1 || $_SESSION['tipo']==7){
+		// Usuario valido
+	}else{
+		header('Location: #/index.php');
+	}
+
+
 ?>
 
 <section id="dashboard">
@@ -53,8 +60,12 @@
 							<td>{{key.carreraFecha}}</td>
 							<td>{{key.carreraEmail}}</td>
 							<td>{{key.carreraTelef}}</td>
-							<td><a class="button azul small" href="index.php#/single/{{key.carreraId}}" target="_black">editar</a></td>
-							<td><a class="button amarillo small" href="index.php#/single/{{key.carreraId}}" target="_black">ver</a></td>
+							<td>
+								<a ng-if="key.inscripcion==true" class="button rojo small" ng-click="cambioEstadoCarrera(0,key.carreraId)">Desactivar</a>
+								<a ng-if="key.inscripcion==false" class="button verde small" ng-click="cambioEstadoCarrera(1,key.carreraId)">Activar</a>
+							</td>
+							<td><a class="button azul small" href="index.php#/single/{{key.carreraId}}" target="_black">Editar</a></td>
+							<td><a class="button amarillo small" href="index.php#/single/{{key.carreraId}}" target="_black">Ver</a></td>
 						</tr>
 					<tbody>
 

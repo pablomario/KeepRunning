@@ -68,28 +68,25 @@
 					</tfoot>
 				</table>
 
-			<h2>Modificación de sus datos personales*</h2>
-				<p>Puede acceder al panel de edición de datos personales pulsando en el siguiente boton.</p>
-				<p>**Recuerde que algunos datos no podran alterarse.</p>
+			<h2>Eliminar cuenta personal*</h2>
+				<p>Por motivos de seguridad y control sus marcas personales e inscripciones permaneran almacenados.</p>
+				<p>**Recuerde que si decide regresar recuperara todos sus datos.</p>
 				<br>
-				<p><a class="button big disabled">Editar Perfil</a></p>
-				<p>Próximamente...</p>
+				<p><a class="button big rojo" ng-click="eliminarUsuario()">Eliminar Perfil</a></p>				
 				<br>
 		</div>
 
 
 
 		<aside class="lateral_single">
-			<h2>Selección Avatar</h2>
-				<form class="seleccion_avatar" action="demo_form.asp">
-					<div class="seleccion_avatar_ajuste">
-						<div class="cuadro"><img src="./imgs/avatares/boy1.png"><br/><input type="checkbox" name="vehicle" value="boy1"></div>
-						<div class="cuadro"><img src="./imgs/avatares/boy2.png"><br/><input type="checkbox" name="vehicle" value="boy2"></div>
-						<div class="cuadro"><img src="./imgs/avatares/girl1.png"><br><input type="checkbox" name="vehicle" value="girl1"></div>
-						<div class="cuadro"><img src="./imgs/avatares/girl2.png"><br><input type="checkbox" name="vehicle" value="girl2"></div>
-					</div>										
-					<input type="submit" value="Submit">
-				</form> 
+			<div ng-controller="dashboard"><div><img src="{{avatar}}"></div></div>
+			<h2>Cambio Avatar</h2>				
+			<div class="seleccion_avatar_ajuste">
+				<div class="cuadro"><img src="./imgs/avatares/boy1.png" ng-click="cambioAvatar('./imgs/avatares/boy1.png')"><br/></div>
+				<div class="cuadro"><img src="./imgs/avatares/boy2.png" ng-click="cambioAvatar('./imgs/avatares/boy2.png')"><br/></div>
+				<div class="cuadro"><img src="./imgs/avatares/girl1.png" ng-click="cambioAvatar('./imgs/avatares/girl1.png')"><br/></div>
+				<div class="cuadro"><img src="./imgs/avatares/girl2.png" ng-click="cambioAvatar('./imgs/avatares/girl2.png')"><br/></div>
+			</div>				
 		</aside>
 	</article>
 

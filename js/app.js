@@ -52,7 +52,14 @@ app.config(['$routeProvider', function($routeProvider)
         templateUrl : "./gestion.php",
         controller: "gestion"
      })
-    .otherwise({ templateUrl : "./portada.php", controller: "portada" });
+    .when("/administracion",{
+        templateUrl : "./administracion.php",
+        controller: "administracion"
+     })
+    .otherwise({ 
+        templateUrl : "./portada.php",
+        controller: "portada"
+    });
 }]);
 
 
@@ -104,6 +111,8 @@ app.config(['$routeProvider', function($routeProvider)
     }]);
 
 
+
+
     /**
      * Construccion del Menu
      */
@@ -126,6 +135,8 @@ app.config(['$routeProvider', function($routeProvider)
     }])
 
 
+
+
     /**
      * Controller proximasCarreras
      * Este controlador obtiene todas las carreras actuales traidas a traves de ajax 
@@ -139,6 +150,8 @@ app.config(['$routeProvider', function($routeProvider)
             $scope.carreras = carrerasP;
         });
     }]);
+
+
 
 
     /**
@@ -158,7 +171,6 @@ app.config(['$routeProvider', function($routeProvider)
         $http.get('lib/ajaxSingle.php?id='+$routeParams.carreraId+' ').success(function(response){
             $scope.carrera = response;  
         }); 
-
         
         // Ajax para saber si puede inscribirse el usuario si esta inscrito le saco su dorsal
         $scope.estaInscrito = function(dataCarrera){          
@@ -172,19 +184,18 @@ app.config(['$routeProvider', function($routeProvider)
                 });       
         };
 
-
         $scope.inscripcion = function(dataCarrera){       
             $http.post('lib/inscripcion.php', {idCarrera:dataCarrera})
             .success(function(responce) {              
-               location.href ="index.php#/dashboard";           
+                location.reload();           
             })
             .error(function() {
                 alert("Ocurrió un error, intentelo más tarde");
             });    
         };
-
-
     }]);
+
+
 
 
     app.controller('dashboard', ['$scope','$http', function($scope,$http){
@@ -192,6 +203,26 @@ app.config(['$routeProvider', function($routeProvider)
         $http.get('lib/inscripcionDashboard.php').success(function(response){
             $scope.carreras = response;  
         }); 
+
+         $scope.cambioAvatar = function(url){           
+            $http.post('lib/cambioAvatar.php', {avatar:url})
+                .success(function() {        
+                    location.reload();
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }
+
+         $scope.eliminarUsuario = function(){ 
+            $http.post('lib/eliminarUsuario.php')
+                .success(function() {                      
+                    location.href = "./lib/logout.php";
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }  
          
     }]);
 
@@ -201,8 +232,67 @@ app.config(['$routeProvider', function($routeProvider)
         $http.get('lib/carrerasOrganizadas.php').success(function(response){
             $scope.carreras = response;  
         }); 
+
+
+        $scope.cambioEstadoCarrera = function(tipo,carreraId){           
+            $http.post('lib/cambioEstadoCarrera.php', {operacion:tipo, idCarrera:carreraId})
+                .success(function() {          
+                    location.reload();
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }
           
     }]);
+
+
+
+
+    app.controller('administracion', ['$scope','$http', function($scope,$http){
+        $scope.lugar = "Administracion";
+
+        $http.get('lib/carrerasOrganizadasAdmin.php').success(function(response){
+            $scope.carreras = response;  
+        }); 
+
+        $http.get('lib/listadoUsuariosAdmin.php').success(function(response){
+            $scope.usuarios = response;  
+        }); 
+
+
+        $scope.cambioEstadoCarrera = function(tipo,carreraId){
+            $http.post('lib/cambioEstadoCarrera.php', {operacion:tipo, idCarrera:carreraId})
+                .success(function() {          
+                    location.reload();
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }
+
+        $scope.promocionUsuarioAdmin = function(tipo,usuarioEmail){           
+            $http.post('lib/promocionUsuarioAdmin.php', {operacion:tipo, usuario:usuarioEmail})
+                .success(function() {                           
+                    location.reload();
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }
+
+        $scope.eliminarUsuario = function(usuarioEmail){ 
+            $http.post('lib/eliminarUsuarioAdmin.php', {usuario:usuarioEmail})
+                .success(function() {                      
+                    location.reload();
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }       
+         
+    }]);
+
 
 
 

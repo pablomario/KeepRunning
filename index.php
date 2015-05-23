@@ -14,7 +14,7 @@
 		<main>
 			<?php include('./includes/menu.php'); ?>
 			
-			<div class="seccion" ng-view> </div>		
+			<div class="seccion"><ng-view></ng-view></div>		
 
 		</main>
 
