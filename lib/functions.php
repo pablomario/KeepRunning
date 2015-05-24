@@ -398,6 +398,76 @@
 	}
 
 
+	/**
+	 * [nuevoEvento description]
+	 * Creación de un nuevo evento.
+	 * @param  [type] $creador        [description]
+	 * @param  [type] $nombre         [description]
+	 * @param  [type] $edicion        [description]
+	 * @param  [type] $inscripcion    [description]
+	 * @param  [type] $fecha          [description]
+	 * @param  [type] $hora           [description]
+	 * @param  [type] $contactoEmail  [description]
+	 * @param  [type] $contactoTelef  [description]
+	 * @param  [type] $imagenCabecera [description]
+	 * @param  [type] $imagenCartel   [description]
+	 * @param  [type] $contenido      [description]
+	 * @return [type]                 [description]
+	 */
+	function nuevoEvento($creador,$nombre,$edicion,$inscripcion,$fecha,$hora,$contactoEmail,$contactoTelef,$imagenCabecera,$imagenCartel,$contenido){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->carreras;	
+
+			if($inscripcion==="true"){
+				$coleccion->insert( array("creador"=>$creador,"nombre"=>$nombre,"edicion"=>$edicion,"inscripcion"=>true,"fecha"=>$fecha,"hora"=>$hora,"contactoEmail"=>$contactoEmail,"contactoTelef"=>$contactoTelef,"imagenCabecera"=>$imagenCabecera,"imagenCartel"=>$imagenCartel,"descripcion"=>$contenido) );			
+			}else{
+				$coleccion->insert( array("creador"=>$creador,"nombre"=>$nombre,"edicion"=>$edicion,"inscripcion"=>false,"fecha"=>$fecha,"hora"=>$hora,"contactoEmail"=>$contactoEmail,"contactoTelef"=>$contactoTelef,"imagenCabecera"=>$imagenCabecera,"imagenCartel"=>$imagenCartel,"descripcion"=>$contenido) );			
+			}
+
+			return true;
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+
+	function listainscritos($carrera){
+		try{
+			$mongo = conexion();
+			$coleccion = $mongo->inscripciones;	
+
+			
+			$coleccionUsuario = $mongo->usuarios;				
+
+			$json = [];
+			$objeto = [];
+
+			$item = $coleccion->find(array("carrera"=>$carrera));
+			foreach($item as $documento){
+				$usuario          = $documento['usuario'];
+				$objeto['dorsal'] = $documento['dorsal'];			
+
+				$itemRace = $coleccionUsuario ->find(array('email' => $usuario ));				
+				foreach($itemRace as $documentoRace){
+					$objeto['avatar']  = $documentoRace['avatar'];
+					$objeto['nombre'] = $documentoRace['nombre'];
+					$objeto['sexo']   = $documentoRace['sexo'];
+				}
+				$json[] = $objeto;
+			}/* Fin first foreach */
+
+			return $json;
+
+		}catch(MongoCursorException $e){
+			return false;
+		}
+	}
+
+
+
+
+
 
 
 	/*

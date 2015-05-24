@@ -35,7 +35,13 @@
 	</header>
 
 	<article id="article_single"> 
-		<div class="contenido_single">			
+		<div class="contenido_single">
+			<h2>Crear nueva carrera</h2>
+				<p>Rellena el sigueinte formulario para organizar un nuevo evento.</p>
+				<br>
+				<p><a class="button big verde" href="index.php#/nuevoevento">Nueva Carrera</a></p>				
+				<br>
+
 			
 			<h2>Carreras Organizadas</h2>								
 				<table>
@@ -64,7 +70,7 @@
 								<a ng-if="key.inscripcion==true" class="button rojo small" ng-click="cambioEstadoCarrera(0,key.carreraId)">Desactivar</a>
 								<a ng-if="key.inscripcion==false" class="button verde small" ng-click="cambioEstadoCarrera(1,key.carreraId)">Activar</a>
 							</td>
-							<td><a class="button azul small" href="index.php#/single/{{key.carreraId}}" target="_black">Editar</a></td>
+							<td><a class="button azul small" href="index.php#/listainscritos/{{key.carreraId}}">Inscritos</a></td>
 							<td><a class="button amarillo small" href="index.php#/single/{{key.carreraId}}" target="_black">Ver</a></td>
 						</tr>
 					<tbody>

@@ -39,11 +39,7 @@ app.config(['$routeProvider', function($routeProvider)
     .when("/privacidad",{
         templateUrl : "./privacidad.php",
         controller: "privacidad"
-     })
-    .when("/tables",{
-        templateUrl : "./tables.php",
-        controller: "portada"
-     })    
+     })     
     .when("/dashboard",{
         templateUrl : "./dashboard.php",
         controller: "dashboard"
@@ -52,7 +48,15 @@ app.config(['$routeProvider', function($routeProvider)
         templateUrl : "./gestion.php",
         controller: "gestion"
      })
-    .when("/administracion",{
+    .when("/nuevoevento",{
+        templateUrl : "./nuevoevento.php",
+        controller: "nuevoevento"
+     })
+    .when("/listainscritos/:carreraId",{
+        templateUrl : "./listainscritos.php",
+        controller: "listainscritos"
+     })
+     .when("/administracion",{
         templateUrl : "./administracion.php",
         controller: "administracion"
      })
@@ -102,17 +106,7 @@ app.config(['$routeProvider', function($routeProvider)
     }]);
 
 
-    app.controller('tables', ['$scope', function($scope)
-    {
-        $scope.lugar= "tables";
-         $http.get('lib/inscripcionDashboard.php').success(function(response){
-            $scope.carreras = response;  
-        }); 
-    }]);
-
-
-
-
+    
     /**
      * Construccion del Menu
      */
@@ -124,8 +118,7 @@ app.config(['$routeProvider', function($routeProvider)
                 {nombre:"Nuevo Usuario",     url: "nuevousuario",   icon:"fa fa-user-plus"},
                 {nombre:"Organizadores",     url: "organizadores",  icon:"fa fa-cube"},
                 {nombre:"Ayuda",             url: "ayuda",          icon:"fa fa-life-ring"},
-                {nombre:"Contacto",          url: "contacto",       icon:"fa fa-comments"},
-                {nombre:"Tables",            url: "tables",         icon:"fa fa-calendar"}
+                {nombre:"Contacto",          url: "contacto",       icon:"fa fa-comments"}
             ]
         };
     });
@@ -227,6 +220,8 @@ app.config(['$routeProvider', function($routeProvider)
     }]);
 
 
+
+
     app.controller('gestion', ['$scope','$http', function($scope,$http){
         $scope.lugar = "Gestion";
         $http.get('lib/carrerasOrganizadas.php').success(function(response){
@@ -245,6 +240,57 @@ app.config(['$routeProvider', function($routeProvider)
         }
           
     }]);
+
+
+
+
+     app.controller('nuevoevento', ['$scope','$http', function($scope,$http){
+        $scope.lugar = "Nuevo Evento";      
+
+        $scope.altaCarrera = function(){
+            $http.post('lib/nuevoEvento.php', {
+                    nombre         : $scope.nombre, 
+                    edicion        : $scope.edicion,
+                    inscripcion    : $scope.inscripcion,
+                    fecha          : $scope.fecha,
+                    hora           : $scope.hora,
+                    contactoEmail  : $scope.contactoEmail,
+                    contactoTelef  : $scope.contactoTelef,
+                    imagenCabecera : $scope.imagenCabecera,
+                    imagenCartel   : $scope.imagenCartel,
+                    contenido      : $scope.contenido
+                })
+                .success(function() {          
+                    location.href="index.php#/gestion";
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }          
+    }]);
+
+
+
+
+    app.controller('listainscritos', ['$scope','$http', '$routeParams', function($scope,$http,$routeParams){
+        
+
+         $scope.lugar = "Lista Inscritos";
+         $http.post('lib/listainscritos.php', {idCarrera:$routeParams.carreraId})
+                .success(function(responce) {        
+                    $scope.listadoInscritos = responce;
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+
+    }]);
+
+
+    
+
+
+
 
 
 

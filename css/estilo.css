@@ -234,11 +234,6 @@
 		}
 
 
-
-
-
-
-
 	header #headerright{
 		width: 50%;
 	}
@@ -453,7 +448,7 @@
 
 /* FORMULARIOS */
 
-	article form input,textarea{
+	article form input,textarea,select{
 		display: block;
 		width: 100%;
 		margin: 1em;
