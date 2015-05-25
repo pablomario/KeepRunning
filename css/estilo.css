@@ -5,7 +5,11 @@
 	*{
 		margin: 0;
 		padding: 0;
-	}
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+		}
 
 	body{
 		font-family: 'Open Sans', sans-serif;
@@ -406,8 +410,8 @@
 
 
 				aside ul li a:hover{
-					color: #A3B12C;
-					background-color: #2a3038;
+					color: #E6FC2D;
+					background-color: #192434;
 				}
 
 			
@@ -471,7 +475,11 @@
 		padding: 0!important;
 		margin: 1.5em!important;
 		background: #ffffff;
-		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+	}
+
+	section article.cartel:hover{				
+		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
 	}
 
 	section article.cartel img{
@@ -481,7 +489,7 @@
 	}
 
 	section article.cartel .contenido{
-		padding: 25px 3px 25px 10px;	
+		padding: 25px 10px 25px 10px;	
 		text-align: left;
 	}
 
@@ -492,12 +500,19 @@
 	}
 
 	section article.cartel a{
+		border-top: 1px solid #697479;
+		padding: 10px 0px;
+		font-size: 1.1em;
+		display: block;
+		text-align: center;
 		text-decoration: none;
 		color: #455A64;
 	}
 
 	section article.cartel a:hover{
-		color: #171B20;
+		color: #112339;
+		border-top: 1px solid #CAFF48;
+		background-color: #9bbe45;
 	}
 
 
@@ -774,11 +789,44 @@
 		align-items: -webkit-center;
 	}
 
+	footer .footer-center{
+		width: 100%;
+		display: block;
+		text-align: center;
+		margin-bottom: 10px;
+	}
+
+		footer .footer-center ul li{
+			display: inline-block;
+			padding: 7px 13px 7px 13px;
+			border-left: 1px solid #495A74;
+		}
+
+		footer .footer-center ul li:first-child {
+			border-left: none;
+		}
+
+			footer .footer-center ul li a{
+				color: #fff;
+				text-decoration: none;
+			}
+
+				footer .footer-center ul li a:hover{
+					color: #fff;
+					text-decoration: underline;
+				}
+
+			footer .footer-center ul li a i{
+				padding-right: 5px;
+			}
+
+
+
 
 	footer img{
 		-webkit-filter: grayscale(1);
 	  	filter: grayscale(1);
-		max-width: 150px;
+		max-width: 100px;
 		height: auto;
 		display: inline-block;
 		margin: 0 auto;

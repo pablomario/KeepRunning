@@ -20,10 +20,8 @@
 				<p>
 					<img src="./imgs/portada/mac.png" style="width:100%;"> 
 					<br>
-					En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía 
-					un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla 
-					de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas 
-					los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda. 
+					KeepRunning es una aplicación Web que trata de centralizar en un mismo lugar la creación, organización 
+					y gestión de carreras populares de ámbito rural, donde la afluencia de participantes es reducida.
 					<br>	<br>
 					<a href="#/carreras" id="buttonLogin" class="button rosa big"><i class="fa fa-globe"></i> Descubrir</a> 
 				</p>
@@ -36,10 +34,10 @@
 
 				<div class="derecha" style="width: 60%;">
 					<p>
-						En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía 
-						un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla 
-						de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados, lantejas 
-						los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda.
+						KeepRunning, nace de la unión de una idea y una necesidad “crear una plataforma sencilla y efectiva 
+						para organizar carreras populares” en el mercado ya existen plataformas similares, por lo que 
+						puede que no sea una idea original, sin embargo se ha querido poner énfasis en el entorno para 
+						el usuario final haciendo la aplicación lo más amigable posible.
 						<br>	<br>
 						<a href="#/ayuda" id="buttonLogin" class="button verde big"><i class="fa fa-life-ring"></i> FAQ's</a>  		
 					</p>

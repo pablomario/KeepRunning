@@ -74,7 +74,6 @@ app.config(['$routeProvider', function($routeProvider)
         $scope.lugar = "Portada";
     }]);
 
-
     app.controller('carreras', ['$scope', function($scope)
     {
     	$scope.lugar = "Proximas Carreras";
@@ -83,12 +82,7 @@ app.config(['$routeProvider', function($routeProvider)
     app.controller('nuevousuario', ['$scope', function($scope)
     {
     	$scope.lugar = "Nuevo Usuario";
-    }]);
-
-    app.controller('organizadores', ['$scope', function($scope)
-    {
-    	$scope.lugar = "Organizadores";
-    }])
+    }]);  
 
     app.controller('ayuda', ['$scope', function($scope)
     {
@@ -143,6 +137,30 @@ app.config(['$routeProvider', function($routeProvider)
             $scope.carreras = carrerasP;
         });
     }]);
+
+
+
+      app.controller('organizadores', ['$scope', function($scope){
+        $scope.lugar = "Organizadores";
+        /*$scope.emailOrganizacion = function(){
+            $http.post('lib/nuevoEvento.php', {
+                    nombre     : $scope.nombre, 
+                    asociacion : $scope.asociacion,
+                    email      : $scope.email,
+                    telefono   : $scope.telefono,
+                    comentario : $scope.comentario
+                })
+                .success(function() {          
+                    location.href="index.php#/gestion";
+                })
+                .error(function() {
+                   alert("Ocurrió un error, itnentelo más tarde");
+                });
+        }*/
+        $scope.emailOrganizacion = function(){
+            alert("email enviado");
+        }
+    }])
 
 
 
@@ -285,12 +303,6 @@ app.config(['$routeProvider', function($routeProvider)
                 });
 
     }]);
-
-
-    
-
-
-
 
 
 
