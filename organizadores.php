@@ -28,7 +28,7 @@
 			<p> Si eres Organizador y deseas cambiar los datos de algún evento organizado rellena el formulario con la opcion adecuada y 
 			los motivos para que en menos de 24 horas nos pongamos en contancto contigo. </p>
 			<h2>Prueba Gratuita</h2>
-			<form method="POST" action="">
+			<form method="POST" ng-submit="emailOrganizacion()">
 				<label for="nombre"> Nombre Completo: </label>
 				<input type="text" name="nombre" ng-model="nombre" placeholder="Ej. Pablo Garcia Perez" required>
 
@@ -36,7 +36,7 @@
 				<input type="text" name="organizacion" ng-model="asociacion" placeholder="Asociacion Parchis" required>
 
 				<label for="email"> Email: </label>
-				<input type="email" name="email" ng-model="email" placeholder="alguien@ejemplo.com" required>
+				<input type="email" name="email" ng-model="email" placeholder="alguien@ejemplo.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
 
 				<label for="telefono"> Telefono: </label>
 				<input type="tel" name="telefono" ng-model="telefono" placeholder="555123123" required>
@@ -44,7 +44,7 @@
 				<label for="comentario"> Comentarios: </label>
 				<textarea type="text" name="comentario" ng-model="comentario" cols="40" rows="5" required></textarea>
 				
-				<input type="submit" value="Registrarme" ng-click="emailOrganizacion()">
+				<input type="submit" value="Registrarme">
 			</form>			
 		</div>
 	</article>

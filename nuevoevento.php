@@ -35,7 +35,7 @@
 	<article id="article_single"> 
 		<div class="contenido_single">			
 			
-			<form method="POST" id="board_newUser" >
+			<form method="POST" id="board_newUser" ng-submit="altaCarrera()">
 				<label for="nombre"> Nombre evento: </label>
 				<input type="text" ng-requried="true" ng-model="nombre" placeholder="Numantobriga" required>
 
@@ -69,7 +69,7 @@
 				<label for="contenido">Contenido: </label>
 				<textarea type="text" ng-requried="true" ng-model="contenido" cols="40" rows="10"></textarea>		
 
-				<input class="buton big verde" type="submit" ng-click="altaCarrera()" value="Nuevo Evento">
+				<input class="buton big verde" type="submit" value="Nuevo Evento">
 			</form>		
 			
 			

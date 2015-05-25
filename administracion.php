@@ -35,7 +35,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Identificador</th>
+						<!-- <th>Identificador</th> -->
 						<th>Cartel</th>
 						<th>Carrera</th>
 						<th>Edicion</th>
@@ -47,7 +47,7 @@
 
 				<tbody ng-repeat="key in carreras">
 					<tr>
-						<td class="ajustado_left">{{key.carreraId}}</td>
+						<!-- <td class="ajustado_left">{{key.carreraId}}</td> -->
 						<td><img src="{{key.carreraCartel}}" style="width:90px; height:auto; "></td>
 						<td>{{key.carreraNombre}}</td>
 						<td>{{key.carreraEdicion}}</td>
@@ -64,7 +64,7 @@
 
 				<tfoot>
 					<tr>
-						<th>Identificador</th>
+						<!-- <th>Identificador</th> -->
 						<th>Cartel</th>
 						<th>Carrera</th>
 						<th>Edicion</th>

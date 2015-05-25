@@ -72,7 +72,7 @@
 				<p>Por motivos de seguridad y control sus marcas personales e inscripciones permaneran almacenados.</p>
 				<p>**Recuerde que si decide regresar recuperara todos sus datos.</p>
 				<br>
-				<p><a class="button big rojo" ng-click="eliminarUsuario()">Eliminar Perfil</a></p>				
+				<p><a class="button small rojo" ng-click="eliminarUsuario()">Eliminar Perfil</a></p>				
 				<br>
 		</div>
 
